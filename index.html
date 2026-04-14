@@ -1666,6 +1666,36 @@ footer {
   .contacto-form { padding: 28px 24px; }
   .blog-header { flex-direction: column; align-items: flex-start; }
 }
+
+/* PORTAL AUTH MODAL */
+.modal-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 51, 89, 0.7); backdrop-filter: blur(10px);
+  z-index: 9999; display: flex; align-items: center; justify-content: center;
+  opacity: 0; visibility: hidden; transition: all 0.3s ease;
+}
+.modal-overlay.active { opacity: 1; visibility: visible; }
+.auth-modal {
+  background: var(--surface); width: 100%; max-width: 440px;
+  border-radius: var(--radius-lg); padding: 40px; box-shadow: var(--shadow-lg);
+  transform: translateY(40px) scale(0.96); transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  font-family: var(--ff-body);
+}
+.modal-overlay.active .auth-modal { transform: translateY(0) scale(1); }
+.auth-close { position: absolute; top: 16px; right: 20px; font-size: 28px; line-height: 1; color: var(--text-light); cursor: pointer; transition: 0.2s; }
+.auth-close:hover { color: var(--dark); }
+.auth-title { font-family: var(--ff-display); font-size: 26px; font-weight: 800; color: var(--dark); margin-bottom: 8px; letter-spacing: -0.03em; }
+.auth-subtitle { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.5; }
+.auth-tabs { display: flex; gap: 8px; margin-bottom: 24px; background: var(--bg-alt); padding: 6px; border-radius: var(--radius); }
+.auth-tab { flex: 1; padding: 10px; text-align: center; font-weight: 600; font-size: 13px; font-family: var(--ff-display); cursor: pointer; border-radius: 4px; color: var(--text-muted); transition: var(--transition); border: none; background: transparent; }
+.auth-tab.active { background: var(--surface); color: var(--dark); box-shadow: var(--shadow-sm); }
+.auth-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; text-align: left; }
+.auth-label { font-family: var(--ff-display); font-size: 13px; font-weight: 600; color: var(--text-muted); }
+.auth-input { width: 100%; padding: 12px 16px; border: 1.5px solid var(--border); border-radius: var(--radius); font-family: var(--ff-body); font-size: 14px; outline: none; transition: 0.2s; background: var(--surface); }
+.auth-input:focus { border-color: var(--dark-light); box-shadow: 0 0 0 3px rgba(0,84,143,0.06); }
+.auth-error { color: #E53935; font-size: 12px; font-weight: 600; margin-top: -8px; margin-bottom: 16px; display: none; }
+.auth-success { color: #43A047; font-size: 13px; font-weight: 600; margin-bottom: 16px; background: #E8F5E9; padding: 12px; border-radius: var(--radius); display: none; }
 </style>
 </head>
 <body>
@@ -1693,6 +1723,7 @@ footer {
         310 685 4340
       </a>
       <a href="contacto.html" target="_blank" class="btn btn--primary" style="padding:10px 20px;font-size:13px;">Agendar cita</a>
+      <button class="btn btn--dark" id="btnOpenModal" style="padding:10px 20px;font-size:13px; margin-left: 8px;">Portal Pacientes</button>
       <button class="hamburger" id="hamburger" aria-label="Menú">
         <span></span><span></span><span></span>
       </button>
@@ -2670,6 +2701,140 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<!-- AUTH MODAL HTML -->
+<div id="authModal" class="modal-overlay">
+  <div class="auth-modal">
+    <div class="auth-close" id="btnCloseModal">&times;</div>
+    <h2 class="auth-title">Portal SAMEN</h2>
+    <p class="auth-subtitle" id="authSubtitle">Ingresa tus credenciales para acceder a tu historial clínico y exámenes.</p>
+    
+    <div class="auth-tabs">
+      <button class="auth-tab active" id="tabLogin" onclick="switchAuthTab('login')">Asignados</button>
+      <button class="auth-tab" id="tabRegister" onclick="switchAuthTab('register')">Nuevo Paciente</button>
+    </div>
 
+    <div id="authErrorMsg" class="auth-error">Error al iniciar sesión. Verifica tus datos.</div>
+    <div id="authSuccessMsg" class="auth-success">¡Registro exitoso! Iniciando portal...</div>
+
+    <form id="authForm" onsubmit="handleAuthSubmit(event)">
+      <div class="auth-group">
+        <label class="auth-label">Correo Electrónico</label>
+        <input type="email" id="authEmail" class="auth-input" placeholder="ejemplo@correo.com" required>
+      </div>
+      <div class="auth-group">
+        <label class="auth-label">Contraseña</label>
+        <input type="password" id="authPassword" class="auth-input" placeholder="Tu contraseña segura" required>
+      </div>
+      <button type="submit" class="btn btn--primary" style="width: 100%; margin-top: 8px; font-size: 15px; padding: 14px;" id="authSubmitBtn">Iniciar Sesión</button>
+    </form>
+  </div>
+</div>
+
+<!-- FIREBASE AUTH CDN SCRIPT -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyAh06JxdZtUSVZgqupnX4K3YZ3M8070xrY",
+    authDomain: "samen-ips-portal-2026.firebaseapp.com",
+    projectId: "samen-ips-portal-2026",
+    storageBucket: "samen-ips-portal-2026.firebasestorage.app",
+    messagingSenderId: "215082415520",
+    appId: "1:215082415520:web:c578501b5e3aaaa03760c5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+
+  window.firebaseAuth = auth;
+  window.signInWithEmailAndPassword = signInWithEmailAndPassword;
+  window.createUserWithEmailAndPassword = createUserWithEmailAndPassword;
+</script>
+
+<script>
+let currentAuthMode = 'login';
+const authModal = document.getElementById('authModal');
+const btnOpen = document.getElementById('btnOpenModal');
+const btnClose = document.getElementById('btnCloseModal');
+const tabLogin = document.getElementById('tabLogin');
+const tabRegister = document.getElementById('tabRegister');
+const authSubmitBtn = document.getElementById('authSubmitBtn');
+const authSubtitle = document.getElementById('authSubtitle');
+const errorMsg = document.getElementById('authErrorMsg');
+const successMsg = document.getElementById('authSuccessMsg');
+
+if (btnOpen) {
+  btnOpen.addEventListener('click', () => { authModal.classList.add('active'); errorMsg.style.display = 'none'; });
+}
+if (btnClose) {
+  btnClose.addEventListener('click', () => { authModal.classList.remove('active'); });
+}
+if (authModal) {
+  authModal.addEventListener('click', (e) => { 
+    if(e.target === authModal) authModal.classList.remove('active'); 
+  });
+}
+
+window.switchAuthTab = function(mode) {
+  currentAuthMode = mode;
+  errorMsg.style.display = 'none';
+  successMsg.style.display = 'none';
+  if (mode === 'login') {
+    tabLogin.classList.add('active');
+    tabRegister.classList.remove('active');
+    authSubmitBtn.textContent = 'Iniciar Sesión';
+    authSubtitle.textContent = 'Ingresa tus credenciales para acceder a tu historial clínico y exámenes.';
+  } else {
+    tabRegister.classList.add('active');
+    tabLogin.classList.remove('active');
+    authSubmitBtn.textContent = 'Crear cuenta y Acceder';
+    authSubtitle.textContent = 'Regístrate con tu correo para vincular tu ficha médica de SAMEN IPS.';
+  }
+}
+
+window.handleAuthSubmit = async function(e) {
+  e.preventDefault();
+  const email = document.getElementById('authEmail').value;
+  const pass = document.getElementById('authPassword').value;
+  errorMsg.style.display = 'none';
+  
+  if (!window.firebaseAuth) {
+    errorMsg.textContent = 'Cargando conexión segura... Intenta de nuevo en un segundo.';
+    errorMsg.style.display = 'block';
+    return;
+  }
+  
+  const auth = window.firebaseAuth;
+  authSubmitBtn.textContent = 'Procesando...';
+  authSubmitBtn.style.opacity = '0.7';
+  
+  try {
+    if (currentAuthMode === 'login') {
+      await window.signInWithEmailAndPassword(auth, email, pass);
+      successMsg.textContent = '¡Ingreso correcto! Cargando portal...';
+    } else {
+      await window.createUserWithEmailAndPassword(auth, email, pass);
+      successMsg.textContent = '¡Cuenta creada! Cargando portal...';
+    }
+    successMsg.style.display = 'block';
+    
+    // Redirect to the Next.js secure dashboard immediately
+    setTimeout(() => {
+      window.location.href = "https://samen-ips-portal-2026.web.app/";
+    }, 1500);
+
+  } catch (error) {
+    console.error(error);
+    errorMsg.style.display = 'block';
+    if(error.code === 'auth/email-already-in-use') errorMsg.textContent = 'El correo ya está registrado. Inicia sesión.';
+    else if(error.code === 'auth/wrong-password' || error.code === 'auth/invalid-credential') errorMsg.textContent = 'Contraseña incorrecta o correo inválido.';
+    else if(error.code === 'auth/weak-password') errorMsg.textContent = 'La contraseña debe tener mínimo 6 caracteres.';
+    else errorMsg.textContent = 'Ocurrió un error. Verifica tus datos de acceso.';
+    authSubmitBtn.textContent = currentAuthMode === 'login' ? 'Iniciar Sesión' : 'Crear cuenta y Acceder';
+    authSubmitBtn.style.opacity = '1';
+  }
+}
+</script>
 
 </body></html>
