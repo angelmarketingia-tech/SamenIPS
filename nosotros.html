@@ -1,1670 +1,175 @@
-<!DOCTYPE html><html lang="es"><head>
+<!DOCTYPE html>
+<html lang="es">
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SAMEN IPS — Clínica de Salud Mental | Villavicencio</title>
-<meta name="description" content="Clínica privada de salud mental en Villavicencio. Urgencias 24/7, hospitalización, consulta externa en psiquiatría y psicología. Cuidado humano y personalizado.">
+<title>Nosotros — SAMEN IPS | Quiénes Somos</title>
+<meta name="description" content="Conoce a SAMEN IPS: nuestra historia, misión, valores y el equipo de profesionales especializados en salud mental que trabajan con dedicación en Villavicencio.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-/* ─── DESIGN SYSTEM ─────────────────────────────────────────── */
 :root {
-  --bg:           #F5F0E8;
-  --bg-alt:       #EDE7D8;
-  --surface:      #FFFFFF;
-  --dark:         #003359;
-  --dark-mid:     #004473;
-  --dark-light:   #00548F;
-  --gold:         #8AB7D8;
-  --gold-light:   #A9CCE3;
-  --gold-pale:    #EAF2F8;
-  --text:         #1A252E;
-  --text-muted:   #546E7A;
-  --text-light:   #90A4AE;
-  --border:       rgba(0,84,143,0.12);
-  --shadow-sm:    0 2px 12px rgba(0,51,89,0.06);
-  --shadow-md:    0 8px 40px rgba(0,51,89,0.10);
-  --shadow-lg:    0 20px 60px rgba(0,51,89,0.14);
-  --radius:       4px;
-  --radius-lg:    8px;
-  --ff-display:   'Plus Jakarta Sans', sans-serif;
-  --ff-body:      'DM Sans', sans-serif;
-  --transition:   all 0.25s cubic-bezier(0.4,0,0.2,1);
+  --bg: #F5F0E8; --bg-alt: #EDE7D8; --surface: #FFFFFF;
+  --dark: #003359; --dark-mid: #004473; --dark-light: #00548F;
+  --gold: #8AB7D8; --gold-light: #A9CCE3; --gold-pale: #EAF2F8;
+  --text: #1A252E; --text-muted: #546E7A; --text-light: #90A4AE;
+  --border: rgba(0,84,143,0.12); --shadow-sm: 0 2px 12px rgba(0,51,89,0.06);
+  --shadow-md: 0 8px 40px rgba(0,51,89,0.10); --shadow-lg: 0 20px 60px rgba(0,51,89,0.14);
+  --radius: 4px; --radius-lg: 8px;
+  --ff-display: 'Plus Jakarta Sans', sans-serif; --ff-body: 'DM Sans', sans-serif;
+  --transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
 }
-
 *,*::before,*::after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; font-size: 16px; }
-body {
-  font-family: var(--ff-body);
-  background: var(--bg);
-  color: var(--text);
-  overflow-x: hidden;
-  -webkit-font-smoothing: antialiased;
-}
+html { scroll-behavior: auto; font-size: 16px; }
+body { font-family: var(--ff-body); background: var(--bg); color: var(--text); overflow-x: hidden; -webkit-font-smoothing: antialiased; }
 img { display: block; max-width: 100%; }
 a { text-decoration: none; color: inherit; }
 ul { list-style: none; }
-
-/* ─── UTILITIES ──────────────────────────────────────────────── */
 .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
 .container--wide { max-width: 1400px; margin: 0 auto; padding: 0 40px; }
-.tag {
-  display: inline-block;
-  font-family: var(--ff-display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--gold);
-  padding: 6px 14px;
-  border: 1px solid var(--gold);
-  border-radius: 100px;
-  margin-bottom: 20px;
-}
-.tag--light {
-  color: rgba(255,255,255,0.7);
-  border-color: rgba(255,255,255,0.25);
-}
-.section-label {
-  font-family: var(--ff-display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 16px;
-}
+.btn { display: inline-flex; align-items: center; gap: 10px; font-family: var(--ff-display); font-size: 14px; font-weight: 600; letter-spacing: 0.02em; padding: 14px 28px; border-radius: var(--radius); border: none; cursor: pointer; transition: var(--transition); text-decoration: none; }
+.btn--primary { background: var(--gold); color: var(--dark); }
+.btn--primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+.btn--outline-light { background: transparent; color: white; border: 1.5px solid rgba(255,255,255,0.35); }
+.btn--outline-light:hover { background: rgba(255,255,255,0.1); }
 
-.btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  font-family: var(--ff-display);
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  padding: 14px 28px;
-  border-radius: var(--radius);
-  border: none;
-  cursor: pointer;
-  transition: var(--transition);
-  text-decoration: none;
-}
-.btn--primary {
-  background: var(--gold);
-  color: var(--dark);
-}
-.btn--primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(192,138,48,0.35); }
-.btn--outline {
-  background: transparent;
-  color: var(--dark);
-  border: 1.5px solid var(--border);
-}
-.btn--outline:hover { border-color: var(--dark); background: var(--dark); color: white; }
-.btn--outline-light {
-  background: transparent;
-  color: white;
-  border: 1.5px solid rgba(255,255,255,0.35);
-}
-.btn--outline-light:hover { background: rgba(255,255,255,0.1); border-color: rgba(255,255,255,0.6); }
-.btn--ghost {
-  background: transparent;
-  color: var(--gold);
-  padding: 0;
-  font-size: 14px;
-  gap: 6px;
-}
-.btn--ghost:hover { gap: 12px; }
-.btn svg { flex-shrink: 0; }
-
-/* ─── NAVBAR ─────────────────────────────────────────────────── */
-#navbar {
-  position: fixed;
-  top: 0; left: 0; right: 0;
-  z-index: 1000;
-  transition: var(--transition);
-  padding: 0;
-  background: rgba(255,255,255,0.98);
-  box-shadow: 0 1px 0 rgba(0,0,0,0.04);
-}
-#navbar.scrolled {
-  box-shadow: var(--shadow-sm);
-}
-.nav-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 72px;
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 40px;
-}
-.nav-logo {
-  display: flex;
-  align-items: center;
-}
-.nav-logo img {
-  height: 44px;
-  width: auto;
-  object-fit: contain;
-}
-.nav-logo-sub {
-  font-size: 10px;
-  font-weight: 400;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  display: block;
-  line-height: 1;
-  margin-top: 1px;
-}
-.nav-links {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-.nav-links a {
-  font-family: var(--ff-display);
-  font-size: 13px;
-  font-weight: 600;
-  color: var(--text-muted);
-  padding: 8px 12px;
-  border-radius: var(--radius);
-  transition: var(--transition);
-  letter-spacing: 0.01em;
-}
+/* NAVBAR */
+#navbar { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; background: rgba(255,255,255,0.98); box-shadow: 0 1px 0 rgba(0,0,0,0.04); transition: var(--transition); }
+#navbar.scrolled { box-shadow: var(--shadow-sm); }
+.nav-inner { display: flex; align-items: center; justify-content: space-between; height: 72px; max-width: 1280px; margin: 0 auto; padding: 0 40px; }
+.nav-logo img { height: 44px; width: auto; object-fit: contain; }
+.nav-links { display: flex; align-items: center; gap: 4px; }
+.nav-links a { font-family: var(--ff-display); font-size: 13px; font-weight: 600; color: var(--text-muted); padding: 8px 12px; border-radius: var(--radius); transition: var(--transition); }
 .nav-links a:hover { color: var(--dark-light); background: rgba(0,84,143,0.06); }
-.nav-links a.active { color: var(--dark-light); }
-.nav-cta {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-.nav-phone {
-  font-family: var(--ff-display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--dark-light);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.nav-phone:hover { color: var(--dark-mid); }
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  padding: 8px;
-  background: none;
-  border: none;
-}
-.hamburger span {
-  display: block;
-  width: 22px;
-  height: 2px;
-  background: var(--dark-light);
-  transition: var(--transition);
-  border-radius: 2px;
-}
+.nav-links a.active { color: var(--dark-light); font-weight: 700; }
+.nav-cta { display: flex; align-items: center; gap: 12px; }
+.nav-phone { font-family: var(--ff-display); font-size: 13px; font-weight: 700; color: var(--dark-light); display: flex; align-items: center; gap: 6px; }
+.hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; background: none; border: none; }
+.hamburger span { display: block; width: 22px; height: 2px; background: var(--dark-light); border-radius: 2px; }
+.mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: var(--dark); z-index: 9998; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; opacity: 0; visibility: hidden; transition: all 0.3s ease; }
+.mobile-menu.open { opacity: 1; visibility: visible; }
+.mobile-close { position: absolute; top: 24px; right: 24px; background: rgba(255,255,255,0.1); border: none; width: 48px; height: 48px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; }
+.mobile-link { font-family: var(--ff-display); font-size: 28px; font-weight: 700; color: rgba(255,255,255,0.7); letter-spacing: -0.02em; padding: 12px 0; transition: var(--transition); }
+.mobile-link:hover { color: white; }
+.mobile-cta-wrap { display: flex; flex-direction: column; gap: 12px; margin-top: 32px; width: 280px; }
 
-/* ─── HERO ───────────────────────────────────────────────────── */
-#hero {
-  min-height: 100vh;
-  background: var(--dark);
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  position: relative;
-  overflow: hidden;
-}
-.hero-left {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 140px 80px 100px 80px;
-  position: relative;
-  z-index: 2;
-}
-.hero-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: rgba(192,138,48,0.15);
-  border: 1px solid rgba(192,138,48,0.3);
-  border-radius: 100px;
-  padding: 7px 14px 7px 10px;
-  margin-bottom: 32px;
-  width: fit-content;
-}
-.hero-badge-dot {
-  width: 7px; height: 7px;
-  background: var(--gold);
-  border-radius: 50%;
-  animation: pulse 2s infinite;
-}
-.hero-badge span {
-  font-family: var(--ff-display);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--gold-light);
-  letter-spacing: 0.04em;
-}
-@keyframes pulse {
-  0%,100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.6; transform: scale(0.85); }
-}
-.hero-title {
-  font-family: var(--ff-display);
-  font-size: clamp(42px, 5vw, 68px);
-  font-weight: 800;
-  color: white;
-  line-height: 1.05;
-  letter-spacing: -0.03em;
-  margin-bottom: 24px;
-}
-.hero-title em {
-  font-style: normal;
-  color: var(--gold-light);
-}
-.hero-desc {
-  font-size: 17px;
-  line-height: 1.7;
-  color: rgba(255,255,255,0.6);
-  max-width: 440px;
-  margin-bottom: 44px;
-  font-weight: 300;
-}
-.hero-actions {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.hero-trust {
-  display: flex;
-  align-items: center;
-  gap: 28px;
-  margin-top: 64px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255,255,255,0.08);
-}
-.hero-trust-item {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-.hero-trust-num {
-  font-family: var(--ff-display);
-  font-size: 28px;
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  line-height: 1;
-}
-.hero-trust-label {
-  font-size: 12px;
-  color: rgba(255,255,255,0.45);
-  font-weight: 400;
-  letter-spacing: 0.03em;
-}
-.hero-divider {
-  width: 1px;
-  height: 36px;
-  background: rgba(255,255,255,0.1);
-}
-.hero-right {
-  position: relative;
-  overflow: hidden;
-}
-.hero-right::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(to right, var(--dark) 0%, transparent 40%);
-  z-index: 1;
-}
-.hero-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center top;
-  filter: brightness(0.55) saturate(0.8);
-}
-.hero-img-placeholder {
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(135deg, #163D28 0%, #0C2518 40%, #0A1F14 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 16px;
-}
-.hero-img-placeholder svg {
-  color: rgba(192,138,48,0.4);
-}
-.hero-img-placeholder span {
-  color: rgba(255,255,255,0.2);
-  font-size: 13px;
-  font-family: var(--ff-display);
-}
-.hero-card {
-  position: absolute;
-  bottom: 48px;
-  left: -24px;
-  z-index: 2;
-  background: white;
-  border-radius: var(--radius-lg);
-  padding: 20px 24px;
-  box-shadow: var(--shadow-lg);
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  width: 260px;
-}
-.hero-card-icon {
-  width: 48px; height: 48px;
-  background: var(--gold-pale);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.hero-card-text strong {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 14px;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 3px;
-}
-.hero-card-text span {
-  font-size: 12px;
-  color: var(--text-muted);
-}
-.hero-scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 80px;
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  z-index: 3;
-}
-.hero-scroll-line {
-  width: 40px; height: 1px;
-  background: rgba(255,255,255,0.2);
-}
-.hero-scroll span {
-  font-size: 11px;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
-  font-family: var(--ff-display);
-}
+/* PAGE HERO */
+.page-hero { background: var(--dark); padding: 160px 0 100px; position: relative; overflow: hidden; }
+.page-hero::before { content: ''; position: absolute; bottom: -20%; left: -5%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(138,183,216,0.07) 0%, transparent 70%); pointer-events: none; }
+.page-hero-label { font-family: var(--ff-display); font-size: 11px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; display: flex; align-items: center; gap: 10px; }
+.page-hero-label::before { content: ''; width: 28px; height: 1px; background: var(--gold); }
+.page-hero h1 { font-family: var(--ff-display); font-size: clamp(44px, 5.5vw, 76px); font-weight: 800; color: white; letter-spacing: -0.035em; line-height: 1.0; margin-bottom: 28px; max-width: 700px; }
+.page-hero h1 em { font-style: normal; color: var(--gold-light); }
+.page-hero p { font-size: 18px; line-height: 1.75; color: rgba(255,255,255,0.55); max-width: 560px; font-weight: 300; margin-bottom: 44px; }
 
-/* ─── URGENCIAS BANNER ───────────────────────────────────────── */
-#urgencias-banner {
-  background: var(--gold);
-  padding: 0;
-}
-.urgencias-inner {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px 40px;
-  max-width: 1280px;
-  margin: 0 auto;
-  gap: 24px;
-}
-.urgencias-left {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-.urgencias-icon {
-  width: 44px; height: 44px;
-  background: rgba(0,0,0,0.12);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-.urgencias-text strong {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 16px;
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.01em;
-}
-.urgencias-text span {
-  font-size: 13px;
-  color: rgba(12,37,24,0.65);
-  font-weight: 400;
-}
-.urgencias-btn {
-  background: var(--dark);
-  color: white;
-  font-family: var(--ff-display);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 11px 22px;
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  white-space: nowrap;
-  transition: var(--transition);
-}
-.urgencias-btn:hover { background: #0F2D1F; transform: translateY(-1px); }
+/* HISTORIA */
+#historia { padding: 120px 0; background: var(--bg); }
+.historia-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 100px; align-items: center; }
+.historia-img { position: relative; }
+.historia-img-wrap { border-radius: 20px; overflow: hidden; aspect-ratio: 4/5; background: var(--dark-mid); }
+.historia-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+.historia-badge { position: absolute; bottom: -20px; right: -20px; background: var(--gold); border-radius: var(--radius-lg); padding: 28px; text-align: center; min-width: 140px; }
+.historia-badge strong { font-family: var(--ff-display); font-size: 44px; font-weight: 800; color: var(--dark); display: block; line-height: 1; letter-spacing: -0.04em; }
+.historia-badge span { font-size: 12px; color: rgba(0,51,89,0.6); font-weight: 500; margin-top: 4px; display: block; }
+.historia-content h2 { font-family: var(--ff-display); font-size: clamp(34px, 3.5vw, 48px); font-weight: 800; color: var(--dark); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 24px; }
+.historia-content p { font-size: 16px; line-height: 1.8; color: var(--text-muted); margin-bottom: 20px; }
+.historia-content strong { color: var(--dark); font-weight: 600; }
 
-/* ─── SERVICIOS ──────────────────────────────────────────────── */
-#servicios {
-  padding: 120px 0;
-  background: var(--bg);
-}
-.servicios-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 64px;
-  gap: 32px;
-}
-.servicios-header-left h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(36px, 4vw, 52px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  max-width: 480px;
-}
-.servicios-header-right {
-  max-width: 340px;
-  font-size: 15px;
-  line-height: 1.7;
-  color: var(--text-muted);
-}
-.servicios-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: auto auto;
-  gap: 24px;
-}
-.servicio-card {
-  position: relative;
-  overflow: hidden;
-  background: white;
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  box-shadow: var(--shadow-sm);
-  padding: 40px;
-  cursor: pointer;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  min-height: 380px;
-}
-.servicio-card:hover { 
-  transform: translateY(-8px); 
-  box-shadow: var(--shadow-md); 
-  border-color: rgba(0,84,143,0.3);
-}
-.servicio-card:hover .servicio-arrow { 
-  transform: translate(6px, -6px); 
-  background: var(--dark-light); 
-  color: white; 
-  border-color: var(--dark-light);
-}
-.servicio-card--featured {
-  grid-column: 1 / 2;
-  grid-row: 1 / 3;
-  background: linear-gradient(170deg, var(--bg-alt) 0%, white 100%);
-  min-height: 640px;
-  border-top: 5px solid var(--dark-light);
-}
-.servicio-card--featured:hover { 
-  background: linear-gradient(170deg, var(--gold-pale) 0%, white 100%); 
-}
-.servicio-card--light {
-  background: white;
-}
-.servicio-num {
-  font-family: var(--ff-display);
-  font-size: 14px;
-  font-weight: 800;
-  color: var(--dark-light);
-  letter-spacing: 0.04em;
-  margin-bottom: 32px;
-  opacity: 0.8;
-}
-.servicio-icon {
-  width: 52px; height: 52px;
-  background: rgba(0,84,143,0.06);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--dark-light);
-  margin-bottom: 24px;
-}
-.servicio-card--featured .servicio-icon {
-  width: 64px; height: 64px;
-  margin-bottom: 32px;
-  background: rgba(0,84,143,0.1);
-}
-.servicio-title {
-  font-family: var(--ff-display);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.02em;
-  line-height: 1.25;
-  margin-bottom: 14px;
-}
-.servicio-card--featured .servicio-title { font-size: 32px; color: var(--dark); }
-.servicio-desc {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--text-muted);
-  margin-bottom: 28px;
-}
-.servicio-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-bottom: 32px;
-}
-.servicio-tags span {
-  font-family: var(--ff-display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  background: var(--bg);
-  border-radius: 8px;
-  padding: 6px 12px;
-}
-.servicio-arrow {
-  align-self: flex-end;
-  width: 44px; height: 44px;
-  border: 1px solid var(--border);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-light);
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  flex-shrink: 0;
-  background: white;
-}
+/* VALORES */
+#valores { padding: 100px 0; background: var(--dark); }
+.valores-header { text-align: center; margin-bottom: 72px; }
+.valores-header h2 { font-family: var(--ff-display); font-size: clamp(34px, 4vw, 52px); font-weight: 800; color: white; letter-spacing: -0.03em; margin-bottom: 16px; }
+.valores-header p { font-size: 16px; color: rgba(255,255,255,0.5); max-width: 480px; margin: 0 auto; line-height: 1.7; }
+.section-label { font-family: var(--ff-display); font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; display: block; }
+.valores-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.valor-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 40px 32px; border-radius: var(--radius); transition: var(--transition); }
+.valor-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(138,183,216,0.25); }
+.valor-card svg { color: var(--gold); margin-bottom: 20px; }
+.valor-card h3 { font-family: var(--ff-display); font-size: 18px; font-weight: 700; color: white; margin-bottom: 12px; letter-spacing: -0.02em; }
+.valor-card p { font-size: 14px; color: rgba(255,255,255,0.45); line-height: 1.65; }
 
-/* ─── NOSOTROS ───────────────────────────────────────────────── */
-#nosotros {
-  padding: 120px 0;
-  background: var(--dark);
-  overflow: hidden;
-}
-.nosotros-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 100px;
-  align-items: center;
-}
-.nosotros-left { position: relative; }
-.nosotros-img-wrap {
-  position: relative;
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  aspect-ratio: 4/5;
-  background: var(--dark-mid);
-}
-.nosotros-img-wrap img {
-  width: 100%; height: 100%;
-  object-fit: cover;
-}
-.nosotros-img-placeholder {
-  width: 100%; height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 12px;
-  color: rgba(255,255,255,0.15);
-}
-.nosotros-badge {
-  position: absolute;
-  bottom: -20px;
-  right: -20px;
-  background: var(--gold);
-  border-radius: var(--radius-lg);
-  padding: 28px;
-  text-align: center;
-  min-width: 140px;
-}
-.nosotros-badge strong {
-  font-family: var(--ff-display);
-  font-size: 44px;
-  font-weight: 800;
-  color: var(--dark);
-  display: block;
-  line-height: 1;
-  letter-spacing: -0.04em;
-}
-.nosotros-badge span {
-  font-size: 12px;
-  color: rgba(12,37,24,0.6);
-  font-weight: 500;
-  margin-top: 4px;
-  display: block;
-}
-.nosotros-right { }
-.nosotros-right h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(34px, 3.5vw, 48px);
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 24px;
-}
-.nosotros-right p {
-  font-size: 16px;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.55);
-  margin-bottom: 16px;
-  font-weight: 300;
-}
-.nosotros-valores {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2px;
-  margin-top: 44px;
-}
-.valor-item {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.06);
-  padding: 24px;
-  border-radius: var(--radius);
-}
-.valor-item svg {
-  color: var(--gold);
-  margin-bottom: 12px;
-}
-.valor-item strong {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 6px;
-}
-.valor-item span {
-  font-size: 13px;
-  color: rgba(255,255,255,0.4);
-  line-height: 1.5;
-}
-
-/* ─── STATS ──────────────────────────────────────────────────── */
-#stats {
-  background: var(--gold);
-  padding: 80px 0;
-}
-.stats-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 1px;
-  background: rgba(12,37,24,0.12);
-}
-.stat-item {
-  background: var(--gold);
-  padding: 40px 48px;
-  text-align: center;
-}
-.stat-num {
-  font-family: var(--ff-display);
-  font-size: 54px;
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.04em;
-  line-height: 1;
-  margin-bottom: 8px;
-}
-.stat-label {
-  font-size: 13px;
-  color: rgba(12,37,24,0.6);
-  font-weight: 400;
-  max-width: 140px;
-  margin: 0 auto;
-  line-height: 1.4;
-}
-
-/* ─── PROCESO ────────────────────────────────────────────────── */
-#proceso {
-  padding: 120px 0;
-  background: var(--bg);
-}
-.proceso-header { text-align: center; margin-bottom: 80px; }
-.proceso-header h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(34px, 4vw, 50px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.03em;
-  margin-bottom: 16px;
-}
-.proceso-header p {
-  font-size: 16px;
-  color: var(--text-muted);
-  max-width: 520px;
-  margin: 0 auto;
-  line-height: 1.65;
-}
-.proceso-steps {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 0;
-  position: relative;
-}
-.proceso-steps::before {
-  content: '';
-  position: absolute;
-  top: 32px;
-  left: calc(12.5% + 32px);
-  right: calc(12.5% + 32px);
-  height: 1px;
-  background: linear-gradient(to right, var(--gold), var(--border), var(--gold));
-}
-.paso {
-  text-align: center;
-  padding: 0 24px;
-  position: relative;
-}
-.paso-num {
-  width: 64px; height: 64px;
-  border-radius: 50%;
-  background: var(--dark);
-  color: var(--gold);
-  font-family: var(--ff-display);
-  font-size: 20px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto 28px;
-  position: relative;
-  z-index: 1;
-  letter-spacing: -0.02em;
-}
-.paso:first-child .paso-num { background: var(--gold); color: var(--dark); }
-.paso-title {
-  font-family: var(--ff-display);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 10px;
-  letter-spacing: -0.01em;
-}
-.paso-desc {
-  font-size: 13px;
-  color: var(--text-muted);
-  line-height: 1.6;
-}
-
-/* ─── EQUIPO ─────────────────────────────────────────────────── */
-#equipo {
-  padding: 120px 0;
-  background: var(--bg-alt);
-}
+/* EQUIPO */
+#equipo { padding: 120px 0; background: var(--bg-alt); }
 .equipo-header { margin-bottom: 64px; }
-.equipo-header h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(34px, 4vw, 50px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.03em;
-  max-width: 560px;
-}
-.equipo-grid {
-  display: grid;
-  grid-template-columns: repeat(4,1fr);
-  gap: 2px;
-}
-.miembro {
-  background: var(--surface);
-  overflow: hidden;
-}
-.miembro-foto {
-  aspect-ratio: 3/4;
-  background: var(--dark-mid);
-  overflow: hidden;
-  position: relative;
-}
-.miembro-foto-placeholder {
-  width: 100%; height: 100%;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 24px;
-}
-.miembro-foto-placeholder svg {
-  color: rgba(255,255,255,0.1);
-}
-.miembro-info {
-  padding: 24px;
-  border-top: 3px solid var(--gold);
-}
-.miembro-nombre {
-  font-family: var(--ff-display);
-  font-size: 16px;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 4px;
-}
-.miembro-cargo {
-  font-size: 12px;
-  color: var(--text-muted);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  font-weight: 500;
-}
+.equipo-header h2 { font-family: var(--ff-display); font-size: clamp(34px, 4vw, 50px); font-weight: 800; color: var(--dark); letter-spacing: -0.03em; max-width: 560px; }
+.equipo-header p { font-size: 16px; color: var(--text-muted); margin-top: 16px; max-width: 500px; line-height: 1.7; }
+.equipo-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 2px; }
+.miembro { background: var(--surface); overflow: hidden; transition: var(--transition); }
+.miembro:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
+.miembro-foto { aspect-ratio: 3/4; background: var(--dark-mid); overflow: hidden; position: relative; display: flex; align-items: flex-end; justify-content: center; padding-bottom: 24px; }
+.miembro-foto svg { color: rgba(255,255,255,0.1); }
+.miembro-info { padding: 24px; border-top: 3px solid var(--gold); }
+.miembro-nombre { font-family: var(--ff-display); font-size: 16px; font-weight: 700; color: var(--dark); margin-bottom: 4px; }
+.miembro-cargo { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; text-transform: uppercase; font-weight: 500; }
 
-/* ─── SEDES ──────────────────────────────────────────────────── */
-#sedes {
-  padding: 120px 0;
-  background: var(--dark);
-  overflow: hidden;
-}
-.sedes-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.sedes-info h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(34px, 3.5vw, 48px);
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
-}
-.sedes-info p {
-  font-size: 16px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.7;
-  margin-bottom: 44px;
-  font-weight: 300;
-}
-.sede-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-lg);
-  padding: 32px;
-  margin-bottom: 16px;
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
-  transition: var(--transition);
-}
-.sede-card:hover { background: rgba(255,255,255,0.07); border-color: rgba(192,138,48,0.3); }
-.sede-card-icon {
-  width: 48px; height: 48px;
-  background: rgba(192,138,48,0.15);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.sede-card-info strong {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 15px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 6px;
-}
-.sede-card-info span {
-  font-size: 13px;
-  color: rgba(255,255,255,0.45);
-  line-height: 1.5;
-  display: block;
-}
-.sede-card-info a {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  margin-top: 12px;
-  font-family: var(--ff-display);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--gold-light);
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  transition: var(--transition);
-}
-.sede-card-info a:hover { gap: 10px; }
-.sedes-map {
-  border-radius: var(--radius-lg);
-  overflow: hidden;
-  height: 500px;
-  background: var(--dark-mid);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-.map-placeholder {
-  width: 100%; height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 16px;
-}
-.map-placeholder svg { color: rgba(192,138,48,0.3); }
-.map-placeholder span { font-size: 13px; color: rgba(255,255,255,0.2); }
-.map-placeholder a {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--gold);
-  color: var(--dark);
-  font-family: var(--ff-display);
-  font-size: 13px;
-  font-weight: 700;
-  padding: 11px 20px;
-  border-radius: var(--radius);
-  transition: var(--transition);
-  margin-top: 8px;
-}
-.map-placeholder a:hover { background: var(--gold-light); }
-
-/* ─── BLOG ───────────────────────────────────────────────────── */
-#blog {
-  padding: 120px 0;
-  background: var(--bg);
-}
-.blog-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  margin-bottom: 56px;
-}
-.blog-header h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(34px, 4vw, 48px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.03em;
-  max-width: 440px;
-}
-.blog-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 32px;
-}
-.post-card {
-  background: white;
-  border-radius: 20px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-  overflow: hidden;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-  display: flex;
-  flex-direction: column;
-  text-decoration: none;
-  color: inherit;
-}
-.post-card:hover {
-  transform: translateY(-6px);
-  box-shadow: var(--shadow-md);
-  border-color: rgba(0,84,143,0.25);
-}
-.post-img {
-  aspect-ratio: 16/10;
-  background: var(--bg-alt);
-  position: relative;
-  overflow: hidden;
-}
-.post-card:hover .post-img-placeholder { filter: brightness(0.9); transform: scale(1.05); }
-.post-img-placeholder {
-  width: 100%; height: 100%;
-  transition: transform 0.5s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.post-cat {
-  position: absolute;
-  top: 16px; left: 16px;
-  background: var(--dark-light);
-  color: white;
-  font-family: var(--ff-display);
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 6px 14px;
-  border-radius: 100px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-}
-.post-body {
-  padding: 32px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-.post-title {
-  font-family: var(--ff-display);
-  font-size: 20px;
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.02em;
-  line-height: 1.35;
-  margin-bottom: 12px;
-  transition: color 0.3s;
-}
-.post-card:hover .post-title { color: var(--dark-light); }
-.post-excerpt {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.65;
-  margin-bottom: 24px;
-  flex-grow: 1;
-}
-.post-read-more {
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--gold);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
-
-/* --- MODAL BLOG --- */
-.blog-modal {
-  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
-  z-index: 9999;
-  display: flex; align-items: center; justify-content: center;
-  opacity: 0; visibility: hidden;
-  transition: all 0.3s ease;
-}
-.blog-modal.active { opacity: 1; visibility: visible; }
-.blog-modal-backdrop {
-  position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.4); backdrop-filter: blur(8px);
-}
-.blog-modal-content {
-  position: relative; width: 90%; max-width: 600px;
-  max-height: 85vh; background: white; border-radius: 20px;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-  overflow-y: auto; padding: 48px;
-  transform: translateY(20px); transition: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-}
-.blog-modal.active .blog-modal-content { transform: translateY(0); }
-.blog-modal-close {
-  position: absolute; top: 20px; right: 20px;
-  background: var(--bg-alt); border: none; width: 40px; height: 40px;
-  border-radius: 50%; display: flex; align-items: center; justify-content: center;
-  cursor: pointer; color: var(--dark); transition: all 0.2s;
-}
-.blog-modal-close:hover { background: var(--border); }
-
-/* ─── TRABAJA ────────────────────────────────────────────────── */
-#trabaja {
-  padding: 100px 0;
-  background: var(--dark-mid);
-}
-.trabaja-inner {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: center;
-}
-.trabaja-left h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(32px, 3.5vw, 46px);
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  line-height: 1.1;
-  margin-bottom: 20px;
-}
-.trabaja-left p {
-  font-size: 16px;
-  color: rgba(255,255,255,0.5);
-  line-height: 1.7;
-  margin-bottom: 36px;
-  font-weight: 300;
-}
-.trabaja-perks {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-.perk {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  font-size: 14px;
-  color: rgba(255,255,255,0.6);
-}
+/* TRABAJA */
+#trabaja { padding: 100px 0; background: var(--dark-mid); }
+.trabaja-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.trabaja-left h2 { font-family: var(--ff-display); font-size: clamp(32px, 3.5vw, 46px); font-weight: 800; color: white; letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 20px; }
+.trabaja-left p { font-size: 16px; color: rgba(255,255,255,0.5); line-height: 1.7; margin-bottom: 36px; font-weight: 300; }
+.trabaja-perks { display: flex; flex-direction: column; gap: 12px; }
+.perk { display: flex; align-items: center; gap: 12px; font-size: 14px; color: rgba(255,255,255,0.6); }
 .perk svg { color: var(--gold); flex-shrink: 0; }
-.trabaja-form {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: var(--radius-lg);
-  padding: 44px;
-}
+.trabaja-form { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius-lg); padding: 44px; }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
 .form-group { margin-bottom: 20px; }
-.form-label {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 12px;
-  font-weight: 600;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.form-input, .form-select, .form-textarea {
-  width: 100%;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: var(--radius);
-  padding: 13px 16px;
-  font-family: var(--ff-body);
-  font-size: 14px;
-  color: white;
-  outline: none;
-  transition: var(--transition);
-}
+.form-label { display: block; font-family: var(--ff-display); font-size: 12px; font-weight: 600; color: rgba(255,255,255,0.5); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 8px; }
+.form-input, .form-select, .form-textarea { width: 100%; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: var(--radius); padding: 13px 16px; font-family: var(--ff-body); font-size: 14px; color: white; outline: none; transition: var(--transition); }
 .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.2); }
-.form-input:focus, .form-select:focus, .form-textarea:focus {
-  border-color: var(--gold);
-  background: rgba(192,138,48,0.06);
-}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--gold); background: rgba(138,183,216,0.06); }
 .form-select option { background: var(--dark); color: white; }
 .form-textarea { resize: vertical; min-height: 100px; }
 
-/* ─── CONTACTO ───────────────────────────────────────────────── */
-#contacto {
-  padding: 120px 0;
-  background: var(--bg-alt);
-}
-.contacto-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 80px;
-  align-items: start;
-}
-.contacto-info h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(32px, 3.5vw, 46px);
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.03em;
-  margin-bottom: 20px;
-}
-.contacto-info p {
-  font-size: 16px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 44px;
-}
-.contacto-items { display: flex; flex-direction: column; gap: 20px; }
-.contacto-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 20px;
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  border: 1px solid var(--border);
-}
-.contacto-item-icon {
-  width: 44px; height: 44px;
-  background: var(--dark);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--gold);
-  flex-shrink: 0;
-}
-.contacto-item-text strong {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 13px;
-  font-weight: 700;
-  color: var(--dark);
-  margin-bottom: 4px;
-}
-.contacto-item-text span, .contacto-item-text a {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.5;
-  display: block;
-}
-.contacto-item-text a:hover { color: var(--dark); }
-.contacto-form {
-  background: var(--surface);
-  border-radius: var(--radius-lg);
-  padding: 48px;
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-sm);
-}
-.contacto-form h3 {
-  font-family: var(--ff-display);
-  font-size: 22px;
-  font-weight: 800;
-  color: var(--dark);
-  letter-spacing: -0.02em;
-  margin-bottom: 32px;
-}
-.form-input--light, .form-select--light, .form-textarea--light {
-  width: 100%;
-  background: var(--bg);
-  border: 1.5px solid var(--border);
-  border-radius: var(--radius);
-  padding: 13px 16px;
-  font-family: var(--ff-body);
-  font-size: 14px;
-  color: var(--text);
-  outline: none;
-  transition: var(--transition);
-}
-.form-input--light::placeholder, .form-textarea--light::placeholder { color: var(--text-light); }
-.form-input--light:focus, .form-select--light:focus, .form-textarea--light:focus {
-  border-color: var(--gold);
-  background: var(--gold-pale);
-}
-.form-label--light {
-  display: block;
-  font-family: var(--ff-display);
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--text-muted);
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  margin-bottom: 8px;
-}
-.form-textarea--light { resize: vertical; min-height: 110px; }
-.form-select--light { appearance: none; cursor: pointer; }
-.form-privacy {
-  font-size: 12px;
-  color: var(--text-light);
-  line-height: 1.5;
-  margin-top: 16px;
-}
-.form-privacy a { color: var(--dark); text-decoration: underline; }
+/* REVEAL */
+.reveal { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+.reveal-delay-1 { transition-delay: 0.12s; }
+.reveal-delay-2 { transition-delay: 0.24s; }
+.reveal-delay-3 { transition-delay: 0.36s; }
 
-/* ─── FOOTER ─────────────────────────────────────────────────── */
-footer {
-  background: white;
-  padding: 80px 0 0;
-  border-top: 1px solid var(--border);
-}
-.footer-top {
-  display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
-  gap: 60px;
-  padding-bottom: 64px;
-  border-bottom: 1px solid var(--border);
-}
-.footer-brand { }
-.footer-logo {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 20px;
-}
-.footer-logo-mark {
-  width: 36px; height: 36px;
-  background: var(--gold);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.footer-logo-text {
-  font-family: var(--ff-display);
-  font-size: 17px;
-  font-weight: 800;
-  color: var(--dark);
-}
-.footer-desc {
-  font-size: 14px;
-  color: var(--text-muted);
-  line-height: 1.7;
-  margin-bottom: 28px;
-  max-width: 280px;
-}
-.footer-social {
-  display: flex;
-  gap: 10px;
-}
-.footer-social a {
-  width: 36px; height: 36px;
-  background: var(--bg-alt);
-  border-radius: var(--radius);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--text-muted);
-  transition: var(--transition);
-}
-.footer-social a:hover { background: var(--gold); color: white; }
-.footer-col h4 {
-  font-family: var(--ff-display);
-  font-size: 12px;
-  font-weight: 700;
-  color: var(--dark-light);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-}
-.footer-col ul { display: flex; flex-direction: column; gap: 12px; }
-.footer-col ul li a {
-  font-size: 14px;
-  color: var(--text-muted);
-  transition: var(--transition);
-}
-.footer-col ul li a:hover { color: var(--dark); }
-.footer-bottom {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 24px 0;
-  gap: 24px;
-}
-.footer-copy {
-  font-size: 13px;
-  color: var(--text-light);
-}
-.footer-legal {
-  display: flex;
-  gap: 24px;
-}
-.footer-legal a {
-  font-size: 12px;
-  color: var(--text-light);
-  transition: var(--transition);
-}
-.footer-legal a:hover { color: var(--text-muted); }
-.footer-habilitacion {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  background: var(--bg-alt);
-  border: 1px solid var(--border);
-  border-radius: 100px;
-  padding: 8px 16px;
-}
-.footer-habilitacion span {
-  font-family: var(--ff-display);
-  font-size: 11px;
-  color: var(--text-muted);
-  font-weight: 500;
-}
+/* FOOTER */
+footer { background: var(--dark); padding: 64px 0 32px; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 48px; margin-bottom: 48px; padding-bottom: 48px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+.footer-desc { font-size: 13px; color: rgba(255,255,255,0.35); line-height: 1.7; max-width: 240px; margin-bottom: 24px; }
+.footer-social { display: flex; gap: 12px; }
+.footer-social a { width: 36px; height: 36px; background: rgba(255,255,255,0.06); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.4); transition: var(--transition); }
+.footer-social a:hover { background: var(--gold); color: var(--dark); }
+.footer-col h4 { font-family: var(--ff-display); font-size: 12px; font-weight: 700; color: rgba(255,255,255,0.5); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 20px; }
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col li a { font-size: 13px; color: rgba(255,255,255,0.35); transition: var(--transition); }
+.footer-col li a:hover { color: white; }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
+.footer-copy { font-size: 12px; color: rgba(255,255,255,0.2); }
+.footer-habilitacion { display: flex; align-items: center; gap: 8px; font-size: 12px; color: rgba(255,255,255,0.3); }
 .footer-habilitacion svg { color: var(--gold); }
+.footer-legal { display: flex; gap: 24px; }
+.footer-legal a { font-size: 12px; color: rgba(255,255,255,0.2); transition: var(--transition); }
+.footer-legal a:hover { color: rgba(255,255,255,0.5); }
 
-/* ─── WHATSAPP FLOAT ─────────────────────────────────────────── */
-.whatsapp-float {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  z-index: 999;
-}
-.whatsapp-btn {
-  width: 56px; height: 56px;
-  background: #25D366;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  box-shadow: 0 4px 20px rgba(37,211,102,0.4);
-  transition: var(--transition);
-  position: relative;
-}
-.whatsapp-btn:hover { transform: scale(1.08); box-shadow: 0 8px 28px rgba(37,211,102,0.5); }
-.whatsapp-tooltip {
-  position: absolute;
-  right: 68px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: var(--dark);
-  color: white;
-  font-family: var(--ff-display);
-  font-size: 12px;
-  font-weight: 600;
-  padding: 8px 14px;
-  border-radius: var(--radius);
-  white-space: nowrap;
-  opacity: 0;
-  pointer-events: none;
-  transition: var(--transition);
-}
-.whatsapp-tooltip::after {
-  content: '';
-  position: absolute;
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  border: 6px solid transparent;
-  border-left-color: var(--dark);
-}
-.whatsapp-btn:hover + .whatsapp-tooltip,
+.whatsapp-float { position: fixed; bottom: 32px; right: 32px; z-index: 9000; }
+.whatsapp-btn { width: 60px; height: 60px; background: #25D366; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: 0 8px 24px rgba(37,211,102,0.35); transition: var(--transition); }
+.whatsapp-btn:hover { transform: scale(1.1); }
+.whatsapp-tooltip { position: absolute; bottom: calc(100% + 12px); right: 0; background: var(--dark); color: white; font-family: var(--ff-display); font-size: 12px; font-weight: 600; white-space: nowrap; padding: 8px 14px; border-radius: 6px; opacity: 0; pointer-events: none; transition: var(--transition); }
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
 
-/* ─── MOBILE NAV ─────────────────────────────────────────────── */
-.mobile-menu {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: var(--dark);
-  z-index: 999;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-  padding: 100px 40px;
-}
-.mobile-menu.open { display: flex; }
-.mobile-menu a {
-  font-family: var(--ff-display);
-  font-size: 28px;
-  font-weight: 800;
-  color: rgba(255,255,255,0.5);
-  letter-spacing: -0.02em;
-  transition: var(--transition);
-  text-align: center;
-}
-.mobile-menu a:hover { color: white; }
-.mobile-close {
-  position: absolute;
-  top: 24px; right: 24px;
-  background: none;
-  border: none;
-  color: white;
-  cursor: pointer;
-  padding: 8px;
-}
-.mobile-cta-wrap {
-  margin-top: 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  width: 100%;
-}
-
-/* ─── ANIMATIONS ─────────────────────────────────────────────── */
-.reveal {
-  opacity: 0;
-  transform: translateY(24px);
-  transition: opacity 0.6s ease, transform 0.6s ease;
-}
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.reveal-delay-1 { transition-delay: 0.1s; }
-.reveal-delay-2 { transition-delay: 0.2s; }
-.reveal-delay-3 { transition-delay: 0.3s; }
-
-@keyframes slideInCard {
-  from { opacity: 0; transform: translateX(-48px) scale(0.9); }
-  to   { opacity: 1; transform: translateX(0)       scale(1);   }
-}
-
-/* ─── TESTIMONIOS ────────────────────────────────────────────── */
-#testimonios {
-  padding: 120px 0;
-  background: var(--dark);
-}
-.testimonios-header { text-align: center; margin-bottom: 72px; }
-.testimonios-header h2 {
-  font-family: var(--ff-display);
-  font-size: clamp(32px, 4vw, 48px);
-  font-weight: 800;
-  color: white;
-  letter-spacing: -0.03em;
-  margin-bottom: 14px;
-}
-.testimonios-header p {
-  font-size: 15px;
-  color: rgba(255,255,255,0.45);
-  max-width: 500px;
-  margin: 0 auto;
-  font-weight: 300;
-  line-height: 1.65;
-}
-.testimonios-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2px;
-}
-.testimonio-card {
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(255,255,255,0.07);
-  padding: 44px 36px;
-  transition: var(--transition);
-  position: relative;
-}
-.testimonio-card:hover {
-  background: rgba(255,255,255,0.07);
-  border-color: rgba(192,138,48,0.25);
-}
-.testimonio-quote {
-  font-size: 40px;
-  color: var(--gold);
-  line-height: 1;
-  margin-bottom: 20px;
-  font-family: Georgia, serif;
-  opacity: 0.7;
-}
-.testimonio-text {
-  font-size: 15px;
-  line-height: 1.75;
-  color: rgba(255,255,255,0.65);
-  font-weight: 300;
-  margin-bottom: 32px;
-  font-style: italic;
-}
-.testimonio-author {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.testimonio-avatar {
-  width: 44px; height: 44px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--dark-light), var(--gold));
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--ff-display);
-  font-size: 16px;
-  font-weight: 800;
-  color: white;
-  flex-shrink: 0;
-}
-.testimonio-name {
-  font-family: var(--ff-display);
-  font-size: 14px;
-  font-weight: 700;
-  color: white;
-  margin-bottom: 2px;
-}
-.testimonio-rol {
-  font-size: 12px;
-  color: rgba(255,255,255,0.35);
-  letter-spacing: 0.03em;
-}
-.testimonio-disclaimer {
-  text-align: center;
-  margin-top: 40px;
-  font-size: 11px;
-  color: rgba(255,255,255,0.2);
-  font-style: italic;
-  max-width: 600px;
-  margin-left: auto;
-  margin-right: auto;
-  line-height: 1.5;
-}
-
-/* ─── RESPONSIVE ─────────────────────────────────────────────── */
 @media (max-width: 1024px) {
-  .nav-links { display: none; }
-  .hamburger { display: flex; }
-  #hero { grid-template-columns: 1fr; }
-  .hero-left { padding: 140px 40px 80px; }
-  .hero-right { display: none; }
-  .hero-trust { gap: 20px; flex-wrap: wrap; }
-  .servicios-grid { grid-template-columns: 1fr 1fr; }
-  .servicio-card--featured { grid-column: 1 / 3; grid-row: auto; min-height: 360px; }
-  .nosotros-grid { grid-template-columns: 1fr; gap: 60px; }
-  .nosotros-left { display: none; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .proceso-steps { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .proceso-steps::before { display: none; }
+  .nav-links { display: none; } .hamburger { display: flex; }
+  .historia-grid { grid-template-columns: 1fr; } .historia-img { display: none; }
+  .valores-grid { grid-template-columns: 1fr 1fr; }
   .equipo-grid { grid-template-columns: 1fr 1fr; }
-  .sedes-inner { grid-template-columns: 1fr; }
-  .blog-grid { grid-template-columns: 1fr; }
-  .testimonios-grid { grid-template-columns: 1fr; gap: 12px; }
   .trabaja-inner { grid-template-columns: 1fr; }
-  .contacto-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr 1fr; gap: 40px; }
-  .urgencias-inner { flex-direction: column; text-align: center; }
 }
 @media (max-width: 640px) {
   .container, .container--wide { padding: 0 20px; }
-  .hero-left { padding: 120px 20px 60px; }
-  .hero-trust { gap: 16px; }
-  .hero-trust-num { font-size: 22px; }
-  .servicios-grid { grid-template-columns: 1fr; }
-  .servicio-card--featured { grid-column: auto; }
-  .servicios-header { flex-direction: column; }
-  .stats-grid { grid-template-columns: 1fr 1fr; }
-  .stat-item { padding: 28px 20px; }
-  .stat-num { font-size: 38px; }
-  .proceso-steps { grid-template-columns: 1fr; }
-  .equipo-grid { grid-template-columns: 1fr 1fr; }
+  .page-hero { padding: 140px 0 80px; }
+  .valores-grid { grid-template-columns: 1fr; }
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; text-align: center; }
   .form-row { grid-template-columns: 1fr; }
-  .nav-phone { display: none; }
-  .nosotros-valores { grid-template-columns: 1fr; }
   .trabaja-form { padding: 28px 24px; }
-  .contacto-form { padding: 28px 24px; }
-  .blog-header { flex-direction: column; align-items: flex-start; }
+  .nav-phone { display: none; }
 }
 </style>
 </head>
@@ -1673,38 +178,30 @@ footer {
 <!-- NAVBAR -->
 <nav id="navbar">
   <div class="nav-inner">
-    <a href="#hero" class="nav-logo">
-      <img src="logo2.jfif" alt="SAMEN IPS Logo Horizontal" style="height:44px; width:auto; border-radius:4px;">
+    <a href="index.html" class="nav-logo">
+      <img src="logo2.jfif" alt="SAMEN IPS Logo" style="height:44px;width:auto;border-radius:4px;">
     </a>
     <div class="nav-links">
       <a href="servicios.html">Servicios</a>
-      <a href="nosotros.html">Nosotros</a>
+      <a href="nosotros.html" class="active">Nosotros</a>
       <a href="nosotros.html#equipo">Equipo</a>
       <a href="sedes.html">Sedes</a>
       <a href="blog.html">Blog</a>
-      <a href="index.html#testimonios">Testimonios</a>
       <a href="nosotros.html#trabaja">Trabaja con Nosotros</a>
     </div>
     <div class="nav-cta">
       <a href="tel:+573106854340" class="nav-phone">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.6 2C1.6.9 2.5 0 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.1 6.1l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-        </svg>
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.6 2 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.1 6.1l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
         310 685 4340
       </a>
       <a href="contacto.html" class="btn btn--primary" style="padding:10px 20px;font-size:13px;">Agendar cita</a>
-      <button class="hamburger" id="hamburger" aria-label="Menú">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="hamburger" id="hamburger" aria-label="Menú"><span></span><span></span><span></span></button>
     </div>
   </div>
 </nav>
 
-<!-- MOBILE MENU -->
 <div class="mobile-menu" id="mobileMenu">
-  <button class="mobile-close" id="mobileClose">
-    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
-  </button>
+  <button class="mobile-close" id="mobileClose"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg></button>
   <a href="servicios.html" class="mobile-link">Servicios</a>
   <a href="nosotros.html" class="mobile-link">Nosotros</a>
   <a href="nosotros.html#equipo" class="mobile-link">Equipo</a>
@@ -1718,267 +215,49 @@ footer {
 </div>
 
 <!-- HERO -->
-<section id="hero">
-  <div class="hero-left">
-    <div class="hero-badge">
-      <div class="hero-badge-dot"></div>
-      <span>Urgencias disponibles 24 horas</span>
-    </div>
-    <h1 class="hero-title">
-      Cuidado en<br>salud mental con<br><em>presencia real.</em>
-    </h1>
-    <p class="hero-desc">
-      Somos una clínica privada especializada en salud mental y consumo de sustancias en Villavicencio. Atendemos urgencias, hospitalización y consulta externa con un equipo humano, cercano y preparado.
-    </p>
-    <div class="hero-actions">
-      <a href="contacto.html" class="btn btn--primary">
-        Agendar cita
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-      </a>
-      <a href="servicios.html" class="btn btn--outline-light">Ver servicios</a>
-    </div>
-    <div class="hero-trust">
-      <div class="hero-trust-item">
-        <span class="hero-trust-num">24/7</span>
-        <span class="hero-trust-label">Urgencias disponibles</span>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-trust-item">
-        <span class="hero-trust-num">+4</span>
-        <span class="hero-trust-label">Años de experiencia</span>
-      </div>
-      <div class="hero-divider"></div>
-      <div class="hero-trust-item">
-        <span class="hero-trust-num">100%</span>
-        <span class="hero-trust-label">Privado y confidencial</span>
-      </div>
-    </div>
-  </div>
-  <div class="hero-right">
-    <img class="hero-img" src="FOTOS/sedehospitalizacion_enhanced_1776123309262.png" alt="Fachada clínica SAMEN IPS Villavicencio" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
-    <div class="hero-card" style="animation: slideInCard 0.9s cubic-bezier(0.34,1.56,0.64,1) 0.5s both; display: flex; align-items: center; gap: 14px; padding: 18px 22px;">
-      <div class="hero-card-icon" style="background: rgba(0, 84, 143, 0.08); border-radius: 8px; padding: 12px; display:flex;">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--dark-light)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M12 22l-3-3-4 .5.5-4-3-3 3-3-.5-4 4 .5 3-3 3 3 4-.5-.5 4 3 3-3 3 .5 4-4-.5z"></path>
-          <path d="M9 12l2 2 4-4"></path>
-        </svg>
-      </div>
-      <div class="hero-card-text">
-        <strong style="color: var(--dark); font-size: 14px; text-transform: uppercase; letter-spacing: 0.03em; display: block; margin-bottom: 2px;">Entidad Certificada</strong>
-        <span style="font-size: 13px; color: var(--text-muted); line-height: 1.4; display: block;">Clínica Alta Especialidad<br>Vigilado Supersalud</span>
-      </div>
-    </div>
-  </div>
-  <div class="hero-scroll">
-    <div class="hero-scroll-line"></div>
-    <span>Explorar</span>
-  </div>
-</section>
-
-<!-- BANNER URGENCIAS -->
-<section id="urgencias-banner">
-  <div class="urgencias-inner">
-    <div class="urgencias-left">
-      <div class="urgencias-icon">
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0C2518" stroke-width="2.5">
-          <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-        </svg>
-      </div>
-      <div class="urgencias-text">
-        <strong>Urgencias de Salud Mental — Disponibles 24 horas, 7 días</strong>
-        <span>Si usted o alguien que conoce está en crisis, estamos aquí. No espere.</span>
-      </div>
-    </div>
-    <a href="tel:+573106854340" class="urgencias-btn">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.6 2 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.1 6.1l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-      </svg>
-      Llamar ahora
+<section class="page-hero">
+  <div class="container">
+    <div class="page-hero-label">Nuestra institución</div>
+    <h1>Una clínica construida<br>para <em>acompañar de verdad.</em></h1>
+    <p>SAMEN IPS nació en 2021 con la convicción de que el cuidado en salud mental debe ser accesible, humano y continuo — no solo durante la crisis, sino a lo largo de todo el proceso.</p>
+    <a href="#historia" class="btn btn--primary">
+      Conocer nuestra historia
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
     </a>
   </div>
 </section>
 
-<!-- SERVICIOS -->
-<section id="servicios">
-  <div class="container--wide">
-    <div class="servicios-header reveal">
-      <div class="servicios-header-left">
-        <div class="section-label">Nuestros servicios</div>
-        <h2>Atención integral en cada etapa del cuidado</h2>
-      </div>
-      <p class="servicios-header-right">
-        Desde la primera crisis hasta la recuperación sostenida — acompañamos al paciente y su familia en cada momento del proceso.
-      </p>
-    </div>
-    <div class="servicios-grid">
-      <!-- FEATURED -->
-      <div class="servicio-card servicio-card--featured reveal" onclick="selectServiceAndScroll('Urgencias / Crisis')">
-        <div>
-          <div class="servicio-num">01</div>
-          <div class="servicio-icon">
-            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-            </svg>
-          </div>
-          <h3 class="servicio-title">Urgencias 24/7</h3>
-          <p class="servicio-desc">Atención inmediata para crisis de salud mental y consumo de sustancias. Equipo disponible las 24 horas, todos los días del año. No es necesaria cita previa.</p>
-          <div class="servicio-tags">
-            <span>Crisis aguda</span>
-            <span>Atención inmediata</span>
-            <span>Sin cita previa</span>
-          </div>
-        </div>
-        <div style="display:flex;align-items:center;justify-content:space-between;">
-          <a href="contacto.html" class="btn btn--outline" style="font-size:13px;">Cómo llegar</a>
-          <div class="servicio-arrow">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-          </div>
-        </div>
-      </div>
-      <!-- HOSPITALIZACIÓN SALUD MENTAL -->
-      <div class="servicio-card reveal reveal-delay-1" onclick="selectServiceAndScroll('Hospitalización Salud Mental')">
-        <div>
-          <div class="servicio-num">02</div>
-          <div class="servicio-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-          </div>
-          <h3 class="servicio-title">Hospitalización en Salud Mental</h3>
-          <p class="servicio-desc">Internación especializada con atención psiquiátrica, psicológica y de enfermería en un entorno seguro y terapéutico.</p>
-          <div class="servicio-tags">
-            <span>Psiquiatría</span>
-            <span>Psicología</span>
-            <span>Enfermería 24h</span>
-          </div>
-        </div>
-        <div class="servicio-arrow">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-        </div>
-      </div>
-      <!-- CONSUMO SPA -->
-      <div class="servicio-card reveal reveal-delay-2" onclick="selectServiceAndScroll('Programa de Adicciones (SPA)')">
-        <div>
-          <div class="servicio-num">03</div>
-          <div class="servicio-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
-            </svg>
-          </div>
-          <h3 class="servicio-title">Programa SPA</h3>
-          <p class="servicio-desc">Tratamiento integral para el consumo de sustancias psicoactivas. Desintoxicación, rehabilitación y reintegración con enfoque familiar.</p>
-          <div class="servicio-tags">
-            <span>Desintoxicación</span>
-            <span>Rehabilitación</span>
-          </div>
-        </div>
-        <div class="servicio-arrow">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-        </div>
-      </div>
-      <!-- CONSULTA EXTERNA -->
-      <div class="servicio-card servicio-card--light reveal reveal-delay-1" onclick="selectServiceAndScroll('Consulta Externa — Psiquiatría')">
-        <div>
-          <div class="servicio-num">04</div>
-          <div class="servicio-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
-            </svg>
-          </div>
-          <h3 class="servicio-title">Consulta Externa</h3>
-          <p class="servicio-desc">Psiquiatría, psicología, medicina general y enfermería. Atención ambulatoria con cita programada para seguimiento y control.</p>
-          <div class="servicio-tags" style="margin-bottom:0;">
-            <span style="border-color:var(--border);color:var(--text-muted);">Psiquiatría</span>
-            <span style="border-color:var(--border);color:var(--text-muted);">Psicología</span>
-            <span style="border-color:var(--border);color:var(--text-muted);">Medicina Gral</span>
-          </div>
-        </div>
-        <div class="servicio-arrow" style="border-color:var(--border);color:var(--dark);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-        </div>
-      </div>
-      <!-- TERAPIA OCUPACIONAL -->
-      <div class="servicio-card servicio-card--light reveal reveal-delay-2" onclick="selectServiceAndScroll('Terapia Ocupacional')">
-        <div>
-          <div class="servicio-num">05</div>
-          <div class="servicio-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path>
-            </svg>
-          </div>
-          <h3 class="servicio-title">Terapia Ocupacional</h3>
-          <p class="servicio-desc">Rehabilitación psicosocial a través de actividades significativas que favorecen la autonomía, las habilidades y la reintegración social.</p>
-          <div class="servicio-tags" style="margin-bottom:0;">
-            <span style="border-color:var(--border);color:var(--text-muted);">Rehabilitación</span>
-            <span style="border-color:var(--border);color:var(--text-muted);">Autonomía</span>
-          </div>
-        </div>
-        <div class="servicio-arrow" style="border-color:var(--border);color:var(--dark);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-        </div>
-      </div>
-      <!-- SERVICIO FARMACÉUTICO -->
-      <div class="servicio-card servicio-card--light reveal reveal-delay-3" onclick="selectServiceAndScroll('Servicio Farmacéutico')">
-        <div>
-          <div class="servicio-num">06</div>
-          <div class="servicio-icon">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M19 9V7a2 2 0 0 0-2-2H7a2 2 0 0 0-2 2v2"></path><rect x="1" y="9" width="22" height="11" rx="2"></rect><path d="M12 14v3M8 14v3M16 14v3"></path>
-            </svg>
-          </div>
-          <h3 class="servicio-title">Servicio Farmacéutico</h3>
-          <p class="servicio-desc">Dispensación de medicamentos psiquiátricos con asesoría especializada, asegurando adherencia al tratamiento y seguridad del paciente.</p>
-          <div class="servicio-tags" style="margin-bottom:0;">
-            <span style="border-color:var(--border);color:var(--text-muted);">Dispensación</span>
-            <span style="border-color:var(--border);color:var(--text-muted);">Asesoría</span>
-          </div>
-        </div>
-        <div class="servicio-arrow" style="border-color:var(--border);color:var(--dark);">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"></path></svg>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- NOSOTROS -->
-<section id="nosotros">
+<!-- HISTORIA -->
+<section id="historia">
   <div class="container">
-    <div class="nosotros-grid">
-      <div class="nosotros-left reveal">
-        <div class="nosotros-img-wrap">
-          <img src="FOTOS/loby_enhanced_1776123288154.png" alt="Instalaciones SAMEN IPS" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+    <div class="historia-grid">
+      <div class="historia-img reveal">
+        <div class="historia-img-wrap">
+          <img src="FOTOS/loby_enhanced_1776123288154.png" alt="Instalaciones SAMEN IPS" style="width:100%;height:100%;object-fit:cover;">
         </div>
-        <div class="nosotros-badge">
+        <div class="historia-badge">
           <strong>2021</strong>
           <span>Año de fundación</span>
         </div>
       </div>
-      <div class="nosotros-right reveal reveal-delay-1">
-        <div class="tag tag--light">Quiénes somos</div>
-        <h2>Una clínica construida para<br>acompañar de verdad.</h2>
-        <p>SAMEN IPS nació en 2021 con una convicción: el cuidado en salud mental debe ser accesible, humano y continuo. No alcanza con la consulta. La recuperación ocurre en el tiempo, en la relación, en el acompañamiento real.</p>
-        <p>Somos una institución privada de salud mental en Villavicencio, con cobertura para el departamento del Meta y municipios aledaños. Atendemos desde la crisis aguda hasta el proceso de rehabilitación y reintegración social.</p>
-        <div class="nosotros-valores">
-          <div class="valor-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-            <strong>Ética y confidencialidad</strong>
-            <span>El respeto a la intimidad del paciente es innegociable.</span>
+      <div class="historia-content reveal reveal-delay-1">
+        <span class="section-label" style="color:var(--dark-light);">Quiénes somos</span>
+        <h2>Más de 4 años cuidando la salud mental en el Meta</h2>
+        <p>Somos una <strong>clínica privada de alta complejidad</strong> especializada en salud mental y consumo de sustancias psicoactivas, ubicada en Villavicencio, Meta. Desde nuestra apertura en 2021, hemos atendido a cientos de pacientes y sus familias con un modelo de atención que integra la ciencia clínica con el acompañamiento humano.</p>
+        <p>Ofrecemos urgencias 24/7, hospitalización en salud mental, programa de adicciones (SPA), consulta externa en psiquiatría y psicología, terapia ocupacional y servicio farmacéutico. <strong>Estamos habilitados por la Secretaría de Salud del Meta</strong> y somos vigilados por la Superintendencia Nacional de Salud.</p>
+        <p>Creemos que tratar la salud mental es acompañar, no solo prescribir. Ese principio guía cada decisión clínica y cada interacción con nuestros pacientes y sus familias.</p>
+        <div style="display:flex;gap:48px;margin-top:44px;padding-top:44px;border-top:1px solid var(--border);">
+          <div>
+            <div style="font-family:var(--ff-display);font-size:44px;font-weight:800;color:var(--dark);letter-spacing:-0.04em;line-height:1;">+4</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Años de experiencia</div>
           </div>
-          <div class="valor-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
-            <strong>Cuidado centrado en la persona</strong>
-            <span>Cada plan es individual, no un protocolo genérico.</span>
+          <div>
+            <div style="font-family:var(--ff-display);font-size:44px;font-weight:800;color:var(--dark);letter-spacing:-0.04em;line-height:1;">24/7</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Urgencias disponibles</div>
           </div>
-          <div class="valor-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"></circle><path d="M8 14s1.5 2 4 2 4-2 4-2"></path><line x1="9" y1="9" x2="9.01" y2="9"></line><line x1="15" y1="9" x2="15.01" y2="9"></line></svg>
-            <strong>Acompañamiento familiar</strong>
-            <span>La familia es parte del proceso, no un espectador.</span>
-          </div>
-          <div class="valor-item">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg>
-            <strong>Continuidad del cuidado</strong>
-            <span>Seguimos con el paciente más allá del alta hospitalaria.</span>
+          <div>
+            <div style="font-family:var(--ff-display);font-size:44px;font-weight:800;color:var(--dark);letter-spacing:-0.04em;line-height:1;">6</div>
+            <div style="font-size:13px;color:var(--text-muted);margin-top:4px;">Servicios especializados</div>
           </div>
         </div>
       </div>
@@ -1986,58 +265,34 @@ footer {
   </div>
 </section>
 
-<!-- STATS -->
-<section id="stats">
+<!-- VALORES -->
+<section id="valores">
   <div class="container--wide">
-    <div class="stats-grid">
-      <div class="stat-item reveal">
-        <div class="stat-num">24/7</div>
-        <div class="stat-label">Disponibilidad en urgencias de salud mental</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-1">
-        <div class="stat-num">4+</div>
-        <div class="stat-label">Años acompañando pacientes en el Meta</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-2">
-        <div class="stat-num">5</div>
-        <div class="stat-label">Programas especializados de atención</div>
-      </div>
-      <div class="stat-item reveal reveal-delay-3">
-        <div class="stat-num">100%</div>
-        <div class="stat-label">Privado, confidencial y habilitado</div>
-      </div>
+    <div class="valores-header reveal">
+      <span class="section-label">Nuestros valores</span>
+      <h2>Los principios que guían nuestro cuidado</h2>
+      <p>Cada decisión clínica y cada interacción con el paciente están regidas por un conjunto de valores que van más allá del protocolo.</p>
     </div>
-  </div>
-</section>
-
-<!-- PROCESO -->
-<section id="proceso">
-  <div class="container">
-    <div class="proceso-header reveal">
-      <div class="section-label">Cómo funciona</div>
-      <h2>De la primera llamada al alta y más allá</h2>
-      <p>Un proceso diseñado para que el paciente y su familia sepan en todo momento dónde están y qué sigue.</p>
-    </div>
-    <div class="proceso-steps">
-      <div class="paso reveal">
-        <div class="paso-num">01</div>
-        <div class="paso-title">Primer contacto</div>
-        <p class="paso-desc">Llama, escríbenos o llega directamente. Respondemos en minutos y te orientamos sin juicios.</p>
+    <div class="valores-grid">
+      <div class="valor-card reveal">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+        <h3>Humanismo</h3>
+        <p>Cada paciente es una persona con una historia, no un diagnóstico. El trato digno, empático y sin juicio es innegociable en todas las áreas de la clínica.</p>
       </div>
-      <div class="paso reveal reveal-delay-1">
-        <div class="paso-num">02</div>
-        <div class="paso-title">Valoración inicial</div>
-        <p class="paso-desc">Un profesional evalúa la situación y define el servicio más adecuado: urgencias, hospitalización o consulta.</p>
+      <div class="valor-card reveal reveal-delay-1">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+        <h3>Seguridad clínica</h3>
+        <p>La seguridad del paciente es el eje de cada decisión terapéutica. Trabajamos con protocolos basados en evidencia y supervisión continuada del equipo clínico.</p>
       </div>
-      <div class="paso reveal reveal-delay-2">
-        <div class="paso-num">03</div>
-        <div class="paso-title">Atención y tratamiento</div>
-        <p class="paso-desc">Intervención especializada con un plan individualizado, con participación activa de la familia.</p>
+      <div class="valor-card reveal reveal-delay-2">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4l3 3"></path></svg>
+        <h3>Continuidad</h3>
+        <p>La recuperación no termina al salir del hospital. Diseñamos planes de egreso y seguimiento para que el paciente mantenga su bienestar en el largo plazo.</p>
       </div>
-      <div class="paso reveal reveal-delay-3">
-        <div class="paso-num">04</div>
-        <div class="paso-title">Seguimiento post-alta</div>
-        <p class="paso-desc">El proceso no termina con el alta. Hacemos seguimiento para asegurar la continuidad y prevenir recaídas.</p>
+      <div class="valor-card reveal reveal-delay-3">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+        <h3>Trabajo en equipo</h3>
+        <p>Psiquiatras, psicólogos, terapeutas y enfermería trabajan de forma coordinada. El modelo interdisciplinario garantiza un tratamiento integral y coherente.</p>
       </div>
     </div>
   </div>
@@ -2047,277 +302,40 @@ footer {
 <section id="equipo">
   <div class="container--wide">
     <div class="equipo-header reveal">
-      <div class="section-label">El equipo</div>
-      <h2>Profesionales formados para acompañar en los momentos más difíciles</h2>
+      <span class="section-label" style="color:var(--dark-light);">Profesionales</span>
+      <h2>El equipo que hace posible el cuidado</h2>
+      <p>Nuestros profesionales comparten la convicción de que la salud mental merece tanta atención como cualquier otra área de la medicina.</p>
     </div>
     <div class="equipo-grid">
       <div class="miembro reveal">
-        <div class="miembro-foto">
-          <div class="miembro-foto-placeholder">
-            <!-- <img src="images/dr-nombre.jpg" alt="Dr. Nombre"> -->
-            <svg width="80" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6">
-              <circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
-            </svg>
-          </div>
-        </div>
+        <div class="miembro-foto"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
         <div class="miembro-info">
-          <div class="miembro-nombre">Dr. Nombre Apellido</div>
-          <div class="miembro-cargo">Médico Psiquiatra</div>
+          <div class="miembro-nombre">Equipo Psiquiátrico</div>
+          <div class="miembro-cargo">Psiquiatría Clínica</div>
         </div>
       </div>
       <div class="miembro reveal reveal-delay-1">
-        <div class="miembro-foto">
-          <div class="miembro-foto-placeholder">
-            <svg width="80" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6">
-              <circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
-            </svg>
-          </div>
-        </div>
+        <div class="miembro-foto"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
         <div class="miembro-info">
-          <div class="miembro-nombre">Dra. Nombre Apellido</div>
-          <div class="miembro-cargo">Psicóloga Clínica</div>
+          <div class="miembro-nombre">Psicológos Clínicos</div>
+          <div class="miembro-cargo">Psicología y Terapia</div>
         </div>
       </div>
       <div class="miembro reveal reveal-delay-2">
-        <div class="miembro-foto">
-          <div class="miembro-foto-placeholder">
-            <svg width="80" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6">
-              <circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
-            </svg>
-          </div>
-        </div>
+        <div class="miembro-foto"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
         <div class="miembro-info">
-          <div class="miembro-nombre">Lic. Nombre Apellido</div>
-          <div class="miembro-cargo">Terapeuta Ocupacional</div>
+          <div class="miembro-nombre">Enfermería Especializada</div>
+          <div class="miembro-cargo">Cuidado 24/7</div>
         </div>
       </div>
       <div class="miembro reveal reveal-delay-3">
-        <div class="miembro-foto">
-          <div class="miembro-foto-placeholder">
-            <svg width="80" height="120" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="0.6">
-              <circle cx="12" cy="7" r="4"></circle><path d="M6 21v-2a6 6 0 0 1 12 0v2"></path>
-            </svg>
-          </div>
-        </div>
+        <div class="miembro-foto"><svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle></svg></div>
         <div class="miembro-info">
-          <div class="miembro-nombre">Enf. Nombre Apellido</div>
-          <div class="miembro-cargo">Coordinadora de Enfermería</div>
+          <div class="miembro-nombre">Terapeutas Ocupacionales</div>
+          <div class="miembro-cargo">Rehabilitación Psicosocial</div>
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SEDES -->
-<section id="sedes">
-  <div class="container">
-    <div class="sedes-inner">
-      <div class="sedes-info reveal">
-        <div class="tag tag--light">Dónde estamos</div>
-        <h2>Estamos en Villavicencio, atendemos al Meta</h2>
-        <p>Nuestra sede principal está ubicada en Villavicencio, con atención a pacientes provenientes de todo el departamento del Meta y municipios aledaños.</p>
-        <div class="sede-card">
-          <div class="sede-card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-            </svg>
-          </div>
-          <div class="sede-card-info">
-            <strong>Sede Consulta Externa</strong>
-            <span>Cra. 47e #10 - 92<br>Villavicencio, Meta, Colombia</span>
-            <a href="https://maps.google.com/?q=Cra.+47e+%2310+-+92,+Villavicencio,+Meta" target="_blank">
-              Ver en Google Maps
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </div>
-        <div class="sede-card">
-          <div class="sede-card-icon" style="background: rgba(0,84,143,0.06); color: var(--dark-light);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline>
-            </svg>
-          </div>
-          <div class="sede-card-info">
-            <strong>Sede Hospitalización</strong>
-            <span>Instalaciones Clínicas Especializadas<br>Villavicencio, Meta, Colombia</span>
-            <a href="contacto.html" onclick="selectServiceAndScroll('Hospitalización Salud Mental')">
-              Consultar ingreso
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </div>
-        <div class="sede-card">
-          <div class="sede-card-icon">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 10.5 19.79 19.79 0 0 1 1.6 2 2 2 0 0 1 3.6 0h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 7.91a16 16 0 0 0 6.1 6.1l.97-.97a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"></path>
-            </svg>
-          </div>
-          <div class="sede-card-info">
-            <strong>Líneas de contacto</strong>
-            <span>Urgencias 24/7: 310 685 4340<br>Citas: citas@samenips.com</span>
-            <a href="tel:+573106854340">
-              Llamar ahora
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-            </a>
-          </div>
-        </div>
-      </div>
-      <div class="sedes-map reveal reveal-delay-1">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3979.7997977401764!2d-73.61909562503165!3d4.120935595853291!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3e2e5052add349%3A0xe5a3c2cfd77dd710!2sCra.%2047e%20%2310-92%2C%20Villavicencio%2C%20Meta%2C%20Colombia!5e0!3m2!1ses!2s!4v1714000000000!5m2!1ses!2s" width="100%" height="100%" style="border:0;filter:grayscale(20%) contrast(1.05);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Ubicación SAMEN IPS — Villavicencio, Meta"></iframe>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- BLOG -->
-<section id="blog">
-  <div class="container--wide">
-    <div class="blog-header reveal">
-      <div>
-        <div class="section-label">Recursos y artículos</div>
-        <h2>Información que acompaña y orienta</h2>
-      </div>
-      <a href="/blog" class="btn btn--outline" style="flex-shrink:0;">Ver todos los artículos</a>
-    </div>
-    <div class="blog-grid">
-      <!-- ART 1: Ansiedad -->
-      <a class="post-card reveal" onclick="openBlogModal('ansiedad')">
-        <div class="post-img">
-          <img src="FOTOS/ansiedad_blog.png" alt="Concepto de Ansiedad" class="post-img-placeholder" style="width:100%; height:100%; object-fit:cover;">
-          <div class="post-cat">Salud Mental</div>
-        </div>
-        <div class="post-body">
-          <h3 class="post-title">Comprendiendo la Ansiedad</h3>
-          <p class="post-excerpt">La ansiedad es una respuesta emocional a situaciones de estrés. Explora los trastornos, síntomas y cómo gestionar y superarla con apoyo clínico.</p>
-          <div class="post-read-more">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-        </div>
-      </a>
-      <!-- ART 2: Suicidio -->
-      <a class="post-card reveal reveal-delay-1" onclick="openBlogModal('suicidio')">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1520962880247-cfaf541c8724?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Prevención y apoyo mutuo" class="post-img-placeholder" style="width:100%; height:100%; object-fit:cover;">
-          <div class="post-cat">Prevención</div>
-        </div>
-        <div class="post-body">
-          <h3 class="post-title">Prevención del Suicidio</h3>
-          <p class="post-excerpt">El suicidio es un problema de salud pública prevenible. Estar alertas a los signos de aislamiento y desesperanza puede salvar vidas.</p>
-          <div class="post-read-more">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-        </div>
-      </a>
-      <!-- ART 3: Depresion -->
-      <a class="post-card reveal reveal-delay-2" onclick="openBlogModal('depresion')">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1493836512294-502baa1986e2?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Superación y tranquilidad emocional" class="post-img-placeholder" style="width:100%; height:100%; object-fit:cover;">
-          <div class="post-cat">Bienestar</div>
-        </div>
-        <div class="post-body">
-          <h3 class="post-title">Superando la Depresión</h3>
-          <p class="post-excerpt">Involucra un decaimiento emocional prolongado y profundo. Conoce los abordajes psicofarmacológicos y terapéuticos que permiten recuperar el equilibrio.</p>
-          <div class="post-read-more">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-        </div>
-      </a>
-      <!-- ART 4: Salud mental -->
-      <a class="post-card reveal" onclick="openBlogModal('salud-mental')">
-        <div class="post-img">
-          <img src="https://images.pexels.com/photos/5699479/pexels-photo-5699479.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Sesión de salud mental" class="post-img-placeholder" style="width:100%; height:100%; object-fit:cover;">
-          <div class="post-cat">Estilo de vida</div>
-        </div>
-        <div class="post-body">
-          <h3 class="post-title">Panorama Salud Mental</h3>
-          <p class="post-excerpt">Un estado donde puedes afrontar las tensiones de la vida y aportar a tu comunidad de manera armónica, mucho más allá de la ausencia de crisis.</p>
-          <div class="post-read-more">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-        </div>
-      </a>
-      <!-- ART 5: Farmacodependencia -->
-      <a class="post-card reveal reveal-delay-1" onclick="openBlogModal('farmacodependencia')">
-        <div class="post-img">
-          <img src="https://images.pexels.com/photos/3683053/pexels-photo-3683053.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=600" alt="Medicamentos y adicciones" class="post-img-placeholder" style="width:100%; height:100%; object-fit:cover;">
-          <div class="post-cat">Tratamiento</div>
-        </div>
-        <div class="post-body">
-          <h3 class="post-title">SPA - Farmacodependencia</h3>
-          <p class="post-excerpt">El tratamiento para adicciones de SAMEN IPS acompaña el complejo tránsito al bienestar físico y la rehabilitación psicosocial integral de los pacientes.</p>
-          <div class="post-read-more">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-        </div>
-      </a>
-      <!-- ART 6: Bipolar -->
-      <a class="post-card reveal reveal-delay-2" onclick="openBlogModal('trastorno-bipolar')">
-        <div class="post-img">
-          <img src="https://images.unsplash.com/photo-1516981879613-9f5da904015f?q=80&amp;w=600&amp;auto=format&amp;fit=crop" alt="Emociones opuestas" class="post-img-placeholder" style="width:100%; height:100%; object-fit:cover;">
-          <div class="post-cat">Diagnóstico</div>
-        </div>
-        <div class="post-body">
-          <h3 class="post-title">Trastorno Afectivo Bipolar</h3>
-          <p class="post-excerpt">Experimentar cambios inusuales del estado de ánimo se puede estabilizar. Un diagnóstico oportuno disminuye radicalmente las afectaciones familiares.</p>
-          <div class="post-read-more">Leer más <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg></div>
-        </div>
-      </a>
-    </div>
-  </div>
-  
-  <!-- BLOG MODAL OVERLAY -->
-  <div id="blogModalOverlay" class="blog-modal">
-    <div class="blog-modal-backdrop" onclick="closeBlogModal()"></div>
-    <div class="blog-modal-content">
-      <button class="blog-modal-close" onclick="closeBlogModal()">
-         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 6L6 18M6 6l12 12"></path></svg>
-      </button>
-      <h3 id="blogModalTitle" style="font-family: var(--ff-display); font-size: 28px; font-weight: 800; color: var(--dark); margin-bottom: 24px; letter-spacing: -0.02em;">Cargando...</h3>
-      <div id="blogModalBodyText" style="line-height: 1.8; color: var(--text-muted); font-size: 15px;">
-        <!-- DYNAMIC CONTENT -->
-      </div>
-      <div style="margin-top: 40px; padding-top: 32px; border-top: 1px solid var(--border); display: flex; justify-content: space-between; align-items: center;">
-         <span style="font-size: 13px; font-weight: 600; color: var(--gold);">SAMEN IPS</span>
-         <button class="btn" style="padding: 10px 24px;" onclick="closeBlogModal()">Cerrar lectura</button>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIOS -->
-<section id="testimonios">
-  <div class="container--wide">
-    <div class="testimonios-header reveal">
-      <div class="section-label" style="color:var(--gold-light);">Voces de quienes confían en nosotros</div>
-      <h2>Lo que dicen las familias y pacientes</h2>
-      <p>Compartimos experiencias con el consentimiento de quienes las vivieron. Los nombres han sido modificados para proteger la privacidad.</p>
-    </div>
-    <div class="testimonios-grid">
-      <div class="testimonio-card reveal">
-        <div class="testimonio-quote">“</div>
-        <p class="testimonio-text">Mi hermano llevaba años sin recibir atención adecuada. Llegamos a SAMEN sin saber qué esperar y encontramos un equipo que nos explicó todo, nos acompañó y nos dio esperanza cuando más la necesitábamos.</p>
-        <div class="testimonio-author">
-          <div class="testimonio-avatar">M</div>
-          <div>
-            <div class="testimonio-name">Marcela R.</div>
-            <div class="testimonio-rol">Familiar de paciente — Hospitalización</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio-card reveal reveal-delay-1">
-        <div class="testimonio-quote">“</div>
-        <p class="testimonio-text">La atención en urgencias fue inmediata y humana. No me hicieron sentir juzgada. El proceso de hospitalización fue difícil, pero nunca me sentí sola. El seguimiento después del alta marcó la diferencia.</p>
-        <div class="testimonio-author">
-          <div class="testimonio-avatar" style="background: linear-gradient(135deg, #163D28, var(--gold));">A</div>
-          <div>
-            <div class="testimonio-name">Andrea L.</div>
-            <div class="testimonio-rol">Paciente — Consulta Externa</div>
-          </div>
-        </div>
-      </div>
-      <div class="testimonio-card reveal reveal-delay-2">
-        <div class="testimonio-quote">“</div>
-        <p class="testimonio-text">Como acudiente, lo más valioso fue que siempre tuve información. Sabía cómo estaba mi papá, qué esperaba el equipo y cuándo podría verlo. Eso reduce mucho la angustia de una familia en crisis.</p>
-        <div class="testimonio-author">
-          <div class="testimonio-avatar" style="background: linear-gradient(135deg, #2D5A3D, #C08A30);">C</div>
-          <div>
-            <div class="testimonio-name">Carlos M.</div>
-            <div class="testimonio-rol">Familiar de paciente — Programa SPA</div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <p class="testimonio-disclaimer">* Las experiencias compartidas corresponden a pacientes reales. Los nombres han sido cambiados y los relatos publicados con consentimiento explícito de los autorizados para hacerlo, en cumplimiento de las normas de confidencialidad clínica.</p>
   </div>
 </section>
 
@@ -2326,164 +344,34 @@ footer {
   <div class="container">
     <div class="trabaja-inner">
       <div class="trabaja-left reveal">
-        <div class="tag tag--light">Únete al equipo</div>
+        <span class="section-label">Únete al equipo</span>
         <h2>¿Tienes vocación por la salud mental?</h2>
         <p>Buscamos profesionales comprometidos con el cuidado humano, que entiendan que tratar en salud mental es acompañar, no solo prescribir.</p>
         <div class="trabaja-perks">
-          <div class="perk">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Ambiente clínico colaborativo y de respeto
-          </div>
-          <div class="perk">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Formación continua y supervisión clínica
-          </div>
-          <div class="perk">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Contratación directa con prestaciones de ley
-          </div>
-          <div class="perk">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
-            Trabajo con propósito real
-          </div>
+          <div class="perk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Ambiente clínico colaborativo y de respeto</div>
+          <div class="perk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Formación continua y supervisión clínica</div>
+          <div class="perk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Contratación directa con prestaciones de ley</div>
+          <div class="perk"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>Trabajo con propósito real</div>
         </div>
       </div>
       <div class="trabaja-form reveal reveal-delay-1">
         <form>
           <div class="form-row">
-            <div class="form-group">
-              <label class="form-label">Nombre</label>
-              <input type="text" class="form-input" placeholder="Tu nombre">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Apellido</label>
-              <input type="text" class="form-input" placeholder="Tu apellido">
-            </div>
+            <div class="form-group"><label class="form-label">Nombre</label><input type="text" class="form-input" placeholder="Tu nombre"></div>
+            <div class="form-group"><label class="form-label">Apellido</label><input type="text" class="form-input" placeholder="Tu apellido"></div>
           </div>
-          <div class="form-group">
-            <label class="form-label">Correo electrónico</label>
-            <input type="email" class="form-input" placeholder="tu@correo.com">
-          </div>
+          <div class="form-group"><label class="form-label">Correo electrónico</label><input type="email" class="form-input" placeholder="tu@correo.com"></div>
           <div class="form-group">
             <label class="form-label">Perfil profesional</label>
             <select class="form-select">
               <option value="">Selecciona tu especialidad</option>
-              <option>Médico Psiquiatra</option>
-              <option>Psicólogo/a Clínico/a</option>
-              <option>Enfermero/a</option>
-              <option>Terapeuta Ocupacional</option>
-              <option>Trabajador/a Social</option>
-              <option>Otro</option>
+              <option>Médico Psiquiatra</option><option>Psicólogo/a Clínico/a</option>
+              <option>Enfermero/a</option><option>Terapeuta Ocupacional</option>
+              <option>Trabajador/a Social</option><option>Otro</option>
             </select>
           </div>
-          <div class="form-group" style="margin-bottom:28px;">
-            <label class="form-label">¿Por qué quieres unirte a SAMEN?</label>
-            <textarea class="form-textarea" placeholder="Cuéntanos brevemente..."></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">
-            Enviar hoja de vida
-          </button>
-        </form>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACTO -->
-<section id="contacto">
-  <div class="container">
-    <div class="contacto-grid">
-      <div class="contacto-info reveal">
-        <div class="section-label">Contáctenos</div>
-        <h2>Estamos aquí para orientarle</h2>
-        <p>Si tiene preguntas sobre nuestros servicios, quiere agendar una valoración o necesita orientación para un familiar, comuníquese con nosotros. Respondemos rápido.</p>
-        <div class="contacto-items">
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon>
-              </svg>
-            </div>
-            <div class="contacto-item-text">
-              <strong>Urgencias — 24 horas</strong>
-              <a href="tel:+573106854340">310 685 4340</a>
-            </div>
-          </div>
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-            </div>
-            <div class="contacto-item-text">
-              <strong>Correo para citas</strong>
-              <a href="mailto:citas@samenips.com">citas@samenips.com</a>
-            </div>
-          </div>
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle>
-              </svg>
-            </div>
-            <div class="contacto-item-text">
-              <strong>Sede única</strong>
-              <span>Cra. 47e #10 - 92<br>Villavicencio, Meta</span>
-            </div>
-          </div>
-          <div class="contacto-item">
-            <div class="contacto-item-icon">
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-            </div>
-            <div class="contacto-item-text">
-              <strong>Recepción de Urgencias</strong>
-              <span>24 Horas, todos los días<br>Atención continua</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="contacto-form reveal reveal-delay-1">
-        <h3>Solicitar información o agendar cita</h3>
-        <form>
-          <div class="form-row">
-            <div class="form-group">
-              <label class="form-label--light">Nombre</label>
-              <input type="text" class="form-input--light" placeholder="Su nombre">
-            </div>
-            <div class="form-group">
-              <label class="form-label--light">Teléfono</label>
-              <input type="tel" class="form-input--light" placeholder="310 685 4340">
-            </div>
-          </div>
-          <div class="form-group">
-            <label class="form-label--light">Correo electrónico</label>
-            <input type="email" class="form-input--light" placeholder="su@correo.com">
-          </div>
-          <div class="form-group">
-            <label class="form-label--light">¿Qué servicio le interesa?</label>
-            <select id="servicio-select" class="form-select--light form-input--light">
-              <option value="">Seleccione una opción</option>
-              <option>Urgencias / Crisis</option>
-              <option>Hospitalización Salud Mental</option>
-              <option>Programa de Adicciones (SPA)</option>
-              <option>Consulta Externa — Psiquiatría</option>
-              <option>Consulta Externa — Psicología</option>
-              <option>Terapia Ocupacional</option>
-              <option>Servicio Farmacéutico</option>
-              <option>Información general</option>
-            </select>
-          </div>
-          <div class="form-group" style="margin-bottom:8px;">
-            <label class="form-label--light">Mensaje</label>
-            <textarea class="form-textarea--light" placeholder="Cuéntenos brevemente su situación o consulta..."></textarea>
-          </div>
-          <p class="form-privacy">Al enviar este formulario acepta el tratamiento de sus datos conforme a nuestra <a href="#">Política de Privacidad</a> y la Ley 1581 de 2012.</p>
-          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;margin-top:20px;">
-            Enviar solicitud
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"></path></svg>
-          </button>
+          <div class="form-group" style="margin-bottom:28px;"><label class="form-label">¿Por qué quieres unirte a SAMEN?</label><textarea class="form-textarea" placeholder="Cuéntanos brevemente..."></textarea></div>
+          <button type="submit" class="btn btn--primary" style="width:100%;justify-content:center;">Enviar hoja de vida</button>
         </form>
       </div>
     </div>
@@ -2495,181 +383,75 @@ footer {
   <div class="container--wide">
     <div class="footer-top">
       <div class="footer-brand">
-        <div class="footer-logo">
-          <img src="logo.jpg" alt="SAMEN IPS" style="height: 60px; width: auto; border-radius: 4px;">
-        </div>
+        <div style="margin-bottom:16px;"><img src="logo.jpg" alt="SAMEN IPS" style="height:60px;width:auto;border-radius:4px;"></div>
         <p class="footer-desc">Clínica privada especializada en salud mental y consumo de sustancias. Villavicencio, Meta — Colombia.</p>
         <div class="footer-social">
-          <a href="#" aria-label="Facebook">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg>
-          </a>
-          <a href="https://www.instagram.com/clinicaips.samen/" target="_blank" aria-label="Instagram">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-          </a>
-          <a href="https://wa.me/573106854340" aria-label="WhatsApp">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path><path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.83L0 24l6.335-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.846 0-3.574-.5-5.065-1.372L3 21.5l.892-3.83A9.965 9.965 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path></svg>
-          </a>
+          <a href="#" aria-label="Facebook"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="https://www.instagram.com/clinicaips.samen/" target="_blank" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+          <a href="https://wa.me/573106854340" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.83L0 24l6.335-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.846 0-3.574-.5-5.065-1.372L3 21.5l.892-3.83A9.965 9.965 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path></svg></a>
         </div>
       </div>
-      <div class="footer-col">
-        <h4>Servicios</h4>
-        <ul>
-          <li><a href="servicios.html">Urgencias 24/7</a></li>
-          <li><a href="servicios.html">Hospitalización</a></li>
-          <li><a href="servicios.html">Programa SPA</a></li>
-          <li><a href="servicios.html">Consulta Externa</a></li>
-          <li><a href="servicios.html">Terapia Ocupacional</a></li>
-          <li><a href="servicios.html">Servicio Farmacéutico</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Institución</h4>
-        <ul>
-          <li><a href="nosotros.html">Quiénes somos</a></li>
-          <li><a href="nosotros.html#equipo">Nuestro equipo</a></li>
-          <li><a href="sedes.html">Sedes</a></li>
-          <li><a href="blog.html">Blog</a></li>
-          <li><a href="nosotros.html#trabaja">Trabaja con nosotros</a></li>
-          <li><a href="contacto.html">Contacto</a></li>
-        </ul>
-      </div>
-      <div class="footer-col">
-        <h4>Contacto</h4>
-        <ul>
-          <li><a href="tel:+573106854340">Urgencias: 310 685 4340</a></li>
-          <li><a href="mailto:citas@samenips.com">citas@samenips.com</a></li>
-          <li><a href="https://samenips.com" target="_blank">samenips.com</a></li>
-          <li><a href="#">Cra. 47e #10 - 92<br>Villavicencio, Meta</a></li>
-        </ul>
-      </div>
+      <div class="footer-col"><h4>Servicios</h4><ul><li><a href="servicios.html#urgencias">Urgencias 24/7</a></li><li><a href="servicios.html#hospitalizacion">Hospitalización</a></li><li><a href="servicios.html#spa">Programa SPA</a></li><li><a href="servicios.html#consulta-externa">Consulta Externa</a></li><li><a href="servicios.html#terapia-ocupacional">Terapia Ocupacional</a></li><li><a href="servicios.html#farmaceutico">Servicio Farmacéutico</a></li></ul></div>
+      <div class="footer-col"><h4>Institución</h4><ul><li><a href="nosotros.html">Quiénes somos</a></li><li><a href="nosotros.html#equipo">Nuestro equipo</a></li><li><a href="sedes.html">Sedes</a></li><li><a href="blog.html">Blog</a></li><li><a href="nosotros.html#trabaja">Trabaja con nosotros</a></li><li><a href="contacto.html">Contacto</a></li></ul></div>
+      <div class="footer-col"><h4>Contacto</h4><ul><li><a href="tel:+573106854340">Urgencias: 310 685 4340</a></li><li><a href="mailto:citas@samenips.com">citas@samenips.com</a></li><li><a href="sedes.html">Cra. 47e #10 - 92, Villavicencio</a></li></ul></div>
     </div>
     <div class="footer-bottom">
       <span class="footer-copy">© 2025 SAMEN IPS. Todos los derechos reservados.</span>
-      <div class="footer-habilitacion">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
-        <span>IPS Habilitada — Resolución Sec. Salud Meta</span>
-      </div>
-      <div class="footer-legal">
-        <a href="#">Política de privacidad</a>
-        <a href="#">Tratamiento de datos</a>
-      </div>
+      <div class="footer-habilitacion"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg><span>IPS Habilitada — Resolución Sec. Salud Meta</span></div>
+      <div class="footer-legal"><a href="#">Política de privacidad</a><a href="#">Tratamiento de datos</a></div>
     </div>
   </div>
 </footer>
 
-<!-- WHATSAPP FLOAT -->
 <div class="whatsapp-float">
-  <a href="https://wa.me/573106854340?text=Hola,%20quiero%20información%20sobre%20los%20servicios%20de%20SAMEN%20IPS." target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
-    <svg width="26" height="26" viewBox="0 0 24 24" fill="white">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"></path>
-      <path d="M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.83L0 24l6.335-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.846 0-3.574-.5-5.065-1.372L3 21.5l.892-3.83A9.965 9.965 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path>
-    </svg>
+  <a href="https://wa.me/573106854340?text=Hola,%20quiero%20información%20sobre%20SAMEN%20IPS." target="_blank" class="whatsapp-btn" aria-label="WhatsApp">
+    <svg width="26" height="26" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z M12 0C5.373 0 0 5.373 0 12c0 2.117.554 4.103 1.523 5.83L0 24l6.335-1.508A11.955 11.955 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.846 0-3.574-.5-5.065-1.372L3 21.5l.892-3.83A9.965 9.965 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"></path></svg>
   </a>
   <div class="whatsapp-tooltip">Escribir por WhatsApp</div>
 </div>
 
 <script>
-// NAV SCROLL
 const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 40) navbar.classList.add('scrolled');
-  else navbar.classList.remove('scrolled');
-}, { passive: true });
-// Start scrolled state
+window.addEventListener('scroll', () => { navbar.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
 navbar.classList.add('scrolled');
+document.getElementById('hamburger').addEventListener('click', () => document.getElementById('mobileMenu').classList.add('open'));
+document.getElementById('mobileClose').addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open'));
+document.querySelectorAll('.mobile-link').forEach(l => l.addEventListener('click', () => document.getElementById('mobileMenu').classList.remove('open')));
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } });
+}, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+// HASH SCROLL on load — robust version
+if (history.scrollRestoration) history.scrollRestoration = 'manual';
 
-// MOBILE MENU
-const hamburger = document.getElementById('hamburger');
-const mobileMenu = document.getElementById('mobileMenu');
-const mobileClose = document.getElementById('mobileClose');
-const mobileLinks = document.querySelectorAll('.mobile-link');
+function scrollToHash() {
+  const hash = window.location.hash;
+  if (!hash) return;
+  const el = document.querySelector(hash);
+  if (!el) return;
+  // Reveal the target element immediately so layout is correct
+  el.classList.add('visible');
+  // Also reveal children with .reveal class
+  el.querySelectorAll('.reveal').forEach(c => c.classList.add('visible'));
+  const top = el.offsetTop - 90;
+  window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
+}
 
-hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
-mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
-mobileLinks.forEach(link => {
-  link.addEventListener('click', () => mobileMenu.classList.remove('open'));
+window.addEventListener('load', () => {
+  setTimeout(scrollToHash, 150);
 });
 
-// REVEAL ANIMATIONS
-const reveals = document.querySelectorAll('.reveal');
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
+// Handle in-page anchor clicks (e.g. "Conocer historia" button)
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+  link.addEventListener('click', (e) => {
+    const target = document.querySelector(link.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      const top = target.offsetTop - 90;
+      window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' });
     }
   });
-}, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
-reveals.forEach(el => observer.observe(el));
-
-// SMOOTH ACTIVE NAV
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav-links a');
-const navObserver = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === '#' + entry.target.id) {
-          link.classList.add('active');
-        }
-      });
-    }
-  });
-}, { threshold: 0.4 });
-sections.forEach(s => navObserver.observe(s));
-
-// SERVICE SELECT & SCROLL
-function selectServiceAndScroll(serviceName) {
-  const select = document.getElementById('servicio-select');
-  if (select) {
-    select.value = serviceName;
-  }
-  const contactoSec = document.getElementById('contacto');
-  if (contactoSec) {
-    const offsetTop = contactoSec.getBoundingClientRect().top + window.pageYOffset - 80;
-    window.scrollTo({
-      top: offsetTop,
-      behavior: 'smooth'
-    });
-  }
-}
-
-// BLOG MODAL SYSTEM
-const blogContent = {
-  ansiedad: { title: "Comprendiendo la Ansiedad", html: "<p>La ansiedad es una respuesta natural del organismo frente a situaciones percibidas como amenazantes. Sin embargo, cuando se manifiesta de forma intensa, constante y sin un estímulo evidente, puede transformarse en un trastorno que requiere acompañamiento profesional. En SAMEN IPS abordamos la ansiedad desde una perspectiva integral, utilizando terapia cognitivo-conductual, pautas de respiración y estabilización farmacológica en los casos que lo ameriten.</p><p style='margin-top:20px; border-left:4px solid var(--gold); padding-left:16px; font-style:italic;'>No tienes que enfrentar el miedo en soledad. Existen estrategias clínicas altamente efectivas para devolverte la tranquilidad.</p>" },
-  suicidio: { title: "Prevención del Suicidio", html: "<p>El suicidio es un problema grave de salud pública, pero es altamente prevenible. Las señales de alerta, como el aislamiento marcado, la desesperanza profunda, o el hecho de regalar pertenencias, nunca deben minimizarse. Es vital mantener líneas de comunicación abiertas, libres de juicio, y escuchar activamente el dolor del otro.</p><p style='margin-top:20px;'>Nuestra clínica cuenta con atención de urgencias psiquiátricas 24/7. Si alguien que conoces enfrenta ideación suicida, el paso inmediato es asegurar un entorno clínico protector para preservar la vida.</p>" },
-  depresion: { title: "Depresión", html: "<p>La depresión va más allá de un episodio transitorio de tristeza. Se manifiesta como una pérdida profunda de interés en la vida (anhedonia), fatiga extrema, alteraciones del sueño y sensación de vacío irreparable.</p><p style='margin-top:20px;'>Al ser un trastorno del estado de ánimo con profundas raíces biológicas y psicológicas, el abordaje de SAMEN IPS integra psiquiatras, psicólogos y terapeutas ocupacionales para restablecer el tejido neuroquímico y emocional del paciente, siempre bajo un entorno de empatía absoluta.</p>" },
-  'salud-mental': { title: "Salud Mental", html: "<p>Según la Organización Mundial de la Salud (OMS), la salud mental es un estado de bienestar completo, no meramente la ausencia de afecciones médicas. Significa que el individuo puede prosperar, gestionar el estrés normativo de la vida y forjar vínculos interpersonales productivos.</p><p style='margin-top:20px;'>Cuidar de la mente implica romper paradigmas obsoletos y estigmas, y normalizar la visita a los psicólogos y psiquiatras corporativos y clínicos de la misma forma en la que se atiende una visita de chequeo general.</p>" },
-  'farmacodependencia': { title: "Programa Farmacodependencia", html: "<p>El consumo crónico de Sustancias Psicoactivas (SPA) induce una adicción biológica que secuestra los circuitos de recompensa del cerebro. Es un trastorno neurobiológico severo y multidimensional, no solo una falencia de control de impulsos.</p><p style='margin-top:20px;'>A través de nuestro internamiento clínico certificado de desintoxicación y el subsecuente programa de recuperación, en SAMEN IPS brindamos la contención biomédica necesaria para superar el síndrome de abstinencia de forma segura y reintegrarse éticamente a la vida social y productiva.</p>" },
-  'trastorno-bipolar': { title: "Trastorno Afectivo Bipolar (TAB)", html: "<p>El Trastorno Afectivo Bipolar se caracteriza clínicamente por fluctuaciones extremas en el ánimo de la persona, alternando episodios de profunda depresión con prolongadas fases de hiperactividad conocidas como manía o hipomanía.</p><p style='margin-top:20px;'>Nuestros psiquiatras altamente especializados definen los esquemas de estabilizadores de ánimo (farmacológicos) indicados, con dosis exactas y acompañamiento psicoterapéutico paralelo, permitiéndole a los pacientes retomar totalmente las riendas y los proyectos de su vida en calma.</p>" }
-};
-
-function openBlogModal(key) {
-  const data = blogContent[key];
-  if (!data) return;
-  document.getElementById('blogModalTitle').innerText = data.title;
-  document.getElementById('blogModalBodyText').innerHTML = data.html;
-  document.getElementById('blogModalOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
-}
-function closeBlogModal() {
-  document.getElementById('blogModalOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-document.addEventListener('DOMContentLoaded', () => {
-  const storedService = localStorage.getItem('selectedService');
-  if (storedService) {
-    const selector = document.getElementById('servicio-select');
-    if (selector) {
-      selector.value = storedService;
-      localStorage.removeItem('selectedService'); // Clear after use
-    }
-  }
 });
 </script>
-
-
-
-</body></html>
+</body>
+</html>
