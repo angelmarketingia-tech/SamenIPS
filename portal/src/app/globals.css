@@ -1,0 +1,234 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --bg: #F5F0E8; 
+  --bg-alt: #EDE7D8; 
+  --surface: #FFFFFF;
+  --dark: #003359; 
+  --dark-mid: #004473; 
+  --dark-light: #00548F;
+  --gold: #8AB7D8; 
+  --gold-light: #A9CCE3; 
+  --gold-pale: #EAF2F8;
+  --text: #1A252E; 
+  --text-muted: #546E7A; 
+  --text-light: #90A4AE;
+  --border: rgba(0,84,143,0.12); 
+  --border-light: rgba(0,84,143,0.06);
+  --shadow-sm: 0 2px 12px rgba(0,51,89,0.06);
+  --shadow-md: 0 8px 40px rgba(0,51,89,0.10); 
+  --shadow-lg: 0 20px 60px rgba(0,51,89,0.14);
+  --radius: 6px; 
+  --radius-lg: 12px;
+  --ff-display: 'Plus Jakarta Sans', sans-serif; 
+  --ff-body: 'DM Sans', sans-serif;
+  --transition: all 0.25s cubic-bezier(0.4,0,0.2,1);
+}
+
+*,*::before,*::after { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
+html, body {
+  font-family: var(--ff-body); 
+  background: var(--bg); 
+  color: var(--text); 
+  -webkit-font-smoothing: antialiased;
+  min-height: 100vh;
+}
+
+a { 
+  text-decoration: none; 
+  color: inherit; 
+  transition: var(--transition);
+}
+
+ul { 
+  list-style: none; 
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font-family: inherit;
+}
+
+/* Base UI Components for the Portal */
+.btn {
+  display: inline-flex; 
+  align-items: center; 
+  justify-content: center;
+  gap: 10px; 
+  font-family: var(--ff-display); 
+  font-size: 14px; 
+  font-weight: 600; 
+  letter-spacing: 0.02em; 
+  padding: 12px 24px; 
+  border-radius: var(--radius); 
+  transition: var(--transition); 
+}
+
+.btn--primary { 
+  background: var(--gold); 
+  color: var(--dark); 
+}
+
+.btn--primary:hover { 
+  background: var(--gold-light); 
+  transform: translateY(-1px); 
+}
+
+.btn--dark { 
+  background: var(--dark); 
+  color: white; 
+}
+
+.btn--dark:hover { 
+  background: var(--dark-mid); 
+}
+
+.btn--outline {
+  background: transparent;
+  border: 1.5px solid var(--border);
+  color: var(--dark);
+}
+
+.btn--outline:hover {
+  background: var(--bg-alt);
+  border-color: var(--dark-light);
+}
+
+/* Form Styles */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.form-label {
+  font-family: var(--ff-display);
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-muted);
+}
+
+.form-input {
+  width: 100%; 
+  background: var(--surface); 
+  border: 1.5px solid var(--border); 
+  border-radius: var(--radius);
+  padding: 14px 16px; 
+  font-family: var(--ff-body); 
+  font-size: 14px; 
+  color: var(--text); 
+  outline: none; 
+  transition: var(--transition);
+}
+
+.form-input:focus {
+  border-color: var(--dark-light); 
+  box-shadow: 0 0 0 3px rgba(0,84,143,0.06);
+}
+
+.form-input::placeholder {
+  color: var(--text-light);
+}
+
+/* Cards & Layouts */
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  padding: 24px;
+}
+
+.auth-wrapper {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg);
+}
+
+.auth-sidebar {
+  flex: 1;
+  background: var(--dark);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 60px;
+  justify-content: space-between;
+}
+
+.auth-sidebar::before {
+  content: ''; 
+  position: absolute; 
+  bottom: -20%; 
+  left: -20%; 
+  width: 800px; 
+  height: 800px; 
+  background: radial-gradient(circle, rgba(138,183,216,0.08) 0%, transparent 70%); 
+  pointer-events: none;
+}
+
+.auth-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.auth-box {
+  width: 100%;
+  max-width: 440px;
+}
+
+.auth-header {
+  margin-bottom: 32px;
+}
+
+.auth-header h1 {
+  font-family: var(--ff-display);
+  font-size: 32px;
+  font-weight: 800;
+  color: var(--dark);
+  letter-spacing: -0.03em;
+  margin-bottom: 8px;
+}
+
+.auth-header p {
+  color: var(--text-muted);
+  font-size: 15px;
+}
+
+.auth-sidebar-text h2 {
+  font-family: var(--ff-display);
+  font-size: clamp(32px, 4vw, 56px);
+  color: white;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  max-width: 500px;
+}
+
+.auth-sidebar-text p {
+  color: rgba(255,255,255,0.6);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.logo-display {
+  width: 160px;
+  height: auto;
+}
+
+@media (max-width: 1024px) {
+  .auth-sidebar { display: none; }
+}
