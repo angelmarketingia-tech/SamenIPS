@@ -4,231 +4,1207 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Portal Clínico | SAMEN IPS</title>
-  
+  <meta name="description" content="Portal Clínico seguro de SAMEN IPS. Accede a tu historial, fórmulas y resultados de exámenes.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    /* ─── SAMEN BRAND DESIGN SYSTEM ────────────────────────────── */
     :root {
-      --primary: #003359;
-      --secondary: #00457A;
-      --gold: #D4AF37;
-      --gold-pale: #FBF7EB;
-      --dark: #0A192F;
-      --text: #334155;
-      --text-muted: #64748B;
-      --surface: #FFFFFF;
-      --bg: #F8FAFC;
-      --border: #E2E8F0;
-      
-      --ff-body: 'Plus Jakarta Sans', system-ui, sans-serif;
-      --ff-display: 'Plus Jakarta Sans', system-ui, sans-serif;
+      --bg:           #F5F0E8;
+      --bg-alt:       #EDE7D8;
+      --surface:      #FFFFFF;
+      --dark:         #003359;
+      --dark-mid:     #004473;
+      --dark-light:   #00548F;
+      --gold:         #8AB7D8;
+      --gold-light:   #A9CCE3;
+      --gold-pale:    #EAF2F8;
+      --text:         #1A252E;
+      --text-muted:   #546E7A;
+      --text-light:   #90A4AE;
+      --border:       rgba(0,84,143,0.12);
+      --border-light: rgba(0,84,143,0.06);
+      --success:      #2E7D32;
+      --success-pale: #E8F5E9;
+      --error:        #C62828;
+      --error-pale:   #FFEBEE;
+      --warning:      #E65100;
+      --warning-pale: #FFF3E0;
+      --shadow-sm:    0 2px 12px rgba(0,51,89,0.06);
+      --shadow-md:    0 8px 40px rgba(0,51,89,0.10);
+      --shadow-lg:    0 20px 60px rgba(0,51,89,0.14);
+      --radius:       4px;
+      --radius-lg:    8px;
+      --radius-xl:    16px;
+      --ff-display:   'Plus Jakarta Sans', sans-serif;
+      --ff-body:      'DM Sans', sans-serif;
+      --transition:   all 0.25s cubic-bezier(0.4,0,0.2,1);
     }
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: var(--ff-body); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; }
-    
-    .header {
-      background: var(--surface); border-bottom: 1px solid var(--border); padding: 0 24px; height: 70px;
-      display: flex; alignItems: center; justify-content: space-between; position: sticky; top: 0; z-index: 100;
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body { font-family: var(--ff-body); background: var(--bg); color: var(--text); min-height: 100vh; display: flex; flex-direction: column; -webkit-font-smoothing: antialiased; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    button { cursor: pointer; font-family: inherit; border: none; background: none; }
+
+    /* ─── BUTTONS ────────────────────────────────────────────── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      font-family: var(--ff-display); font-size: 14px; font-weight: 600; letter-spacing: 0.02em;
+      padding: 12px 24px; border-radius: var(--radius); border: none; cursor: pointer; transition: var(--transition);
     }
-    .brand { font-family: var(--ff-display); font-weight: 800; color: var(--dark); font-size: 20px; letter-spacing: -0.02em; }
-    .nav-links { display: flex; gap: 24px; }
-    .nav-link { color: var(--text-muted); text-decoration: none; font-weight: 500; font-size: 14px; display: flex; align-items: center; gap: 6px; }
-    .nav-link.active { color: var(--dark); font-weight: 600; }
-    
-    .user-profile { display: flex; align-items: center; gap: 16px; }
-    .badge { display: flex; align-items: center; gap: 8px; padding: 6px 12px; background: #F1F5F9; border-radius: 100px; }
-    .avatar { width: 28px; height: 28px; border-radius: 50%; background: var(--dark); color: white; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: bold; }
-    
-    .btn { padding: 10px 20px; border-radius: 8px; font-weight: 600; font-size: 14px; cursor: pointer; transition: 0.2s; border: none; display: flex; align-items: center; justify-content: center; gap: 8px; }
     .btn--primary { background: var(--gold); color: var(--dark); }
-    .btn--primary:hover { transform: translateY(-1px); box-shadow: 0 4px 12px rgba(212,175,55,0.3); }
+    .btn--primary:hover { background: var(--gold-light); transform: translateY(-1px); box-shadow: 0 8px 24px rgba(138,183,216,0.4); }
     .btn--dark { background: var(--dark); color: white; }
-    .btn--dark:hover { background: var(--secondary); }
-    
-    main { flex: 1; padding: 40px 24px; max-width: 1200px; margin: 0 auto; width: 100%; animation: fadeIn 0.4s ease; }
-    @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
-    
-    .title-sec { display: flex; justify-content: space-between; align-items: center; margin-bottom: 40px; }
-    .title-sec h1 { font-size: 32px; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin-bottom: 8px; }
-    .title-sec p { color: var(--text-muted); }
-    
-    .card { background: var(--surface); border-radius: 16px; padding: 24px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
-    
-    .grid-admin { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; }
-    .grid-patient { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 24px; margin-bottom: 32px; }
-    
-    .patient-row { display: flex; align-items: center; justify-content: space-between; padding: 16px; border: 1px solid var(--border); border-radius: 8px; margin-bottom: 12px; cursor: pointer; transition: 0.2s; }
-    .patient-row:hover { border-color: var(--gold); background: var(--gold-pale); transform: translateY(-2px); }
-    
-    .upload-zone { border: 2px dashed rgba(255,255,255,0.2); border-radius: 8px; padding: 32px 20px; text-align: center; cursor: pointer; background: rgba(0,0,0,0.1); transition: 0.2s; }
-    .upload-zone:hover { border-color: var(--gold); }
-    
-    #loadingScreen { position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: var(--bg); display: flex; flex-direction: column; align-items: center; justify-content: center; z-index: 9999; }
-    .spinner { width: 40px; height: 40px; border: 3px solid var(--border); border-top-color: var(--gold); border-radius: 50%; animation: spin 1s linear infinite; }
+    .btn--dark:hover { background: var(--dark-mid); }
+    .btn--outline { background: transparent; color: var(--dark); border: 1.5px solid var(--border); }
+    .btn--outline:hover { border-color: var(--dark); background: var(--dark); color: white; }
+    .btn--ghost { background: transparent; color: var(--dark-light); padding: 0; font-size: 13px; gap: 6px; }
+    .btn--ghost:hover { color: var(--dark); }
+    .btn--danger { background: var(--error-pale); color: var(--error); }
+    .btn--danger:hover { background: var(--error); color: white; }
+    .btn:disabled { opacity: 0.6; cursor: not-allowed; }
+    .btn--full { width: 100%; }
+    .btn--sm { padding: 8px 16px; font-size: 13px; }
+    .btn--lg { padding: 16px 32px; font-size: 15px; }
+
+    /* ─── CARDS ─────────────────────────────────────────────── */
+    .card {
+      background: var(--surface); border-radius: var(--radius-xl);
+      padding: 24px; box-shadow: var(--shadow-sm); border: 1px solid var(--border-light);
+    }
+    .card--dark { background: var(--dark); color: white; border-color: transparent; }
+
+    /* ─── FORMS ─────────────────────────────────────────────── */
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    .form-label { font-family: var(--ff-display); font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--text-muted); }
+    .form-input {
+      width: 100%; padding: 12px 16px; border: 1.5px solid var(--border);
+      border-radius: var(--radius); font-family: var(--ff-body); font-size: 14px; color: var(--text);
+      background: var(--surface); outline: none; transition: var(--transition);
+    }
+    .form-input:focus { border-color: var(--dark-light); box-shadow: 0 0 0 3px var(--gold-pale); }
+    .form-input::placeholder { color: var(--text-light); }
+    .form-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23546E7A' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 14px center; padding-right: 36px; }
+
+    /* ─── BADGES & TAGS ─────────────────────────────────────── */
+    .badge { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 100px; font-size: 12px; font-weight: 600; }
+    .badge--medico { background: var(--gold-pale); color: var(--dark); }
+    .badge--admin { background: var(--success-pale); color: var(--success); }
+    .badge--paciente { background: var(--error-pale); color: var(--error); }
+    .badge--warning { background: var(--warning-pale); color: var(--warning); }
+
+    /* ─── ALERTS ─────────────────────────────────────────────── */
+    .alert { padding: 12px 16px; border-radius: var(--radius); font-size: 13px; font-weight: 600; margin-bottom: 16px; display: none; }
+    .alert--error { background: var(--error-pale); color: var(--error); }
+    .alert--success { background: var(--success-pale); color: var(--success); }
+
+    /* ─── LOADING ────────────────────────────────────────────── */
+    #loadingScreen {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: var(--dark); display: flex; flex-direction: column;
+      align-items: center; justify-content: center; z-index: 9999; transition: opacity 0.4s ease;
+    }
+    .spinner { width: 40px; height: 40px; border: 3px solid rgba(255,255,255,0.1); border-top-color: var(--gold); border-radius: 50%; animation: spin 0.8s linear infinite; }
     @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ─── LOGIN PAGE ──────────────────────────────────────────── */
+    #loginPage { display: none; min-height: 100vh; }
+    .login-layout { display: grid; grid-template-columns: 1fr 1fr; min-height: 100vh; }
+
+    .login-left {
+      background: var(--dark);
+      display: flex; flex-direction: column; justify-content: space-between; padding: 48px;
+      position: relative; overflow: hidden;
+    }
+    .login-left::before {
+      content: ''; position: absolute; top: -100px; right: -100px;
+      width: 400px; height: 400px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(138,183,216,0.15) 0%, transparent 70%);
+    }
+    .login-left::after {
+      content: ''; position: absolute; bottom: -80px; left: -80px;
+      width: 320px; height: 320px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(138,183,216,0.08) 0%, transparent 70%);
+    }
+    .login-brand { position: relative; z-index: 1; }
+    .login-brand img { height: 52px; width: auto; border-radius: 6px; }
+    .login-headline {
+      position: relative; z-index: 1;
+      font-family: var(--ff-display); font-size: 42px; font-weight: 800;
+      color: white; line-height: 1.15; letter-spacing: -0.03em;
+    }
+    .login-headline span { color: var(--gold); }
+    .login-desc { color: rgba(255,255,255,0.65); font-size: 15px; line-height: 1.7; margin-top: 16px; max-width: 380px; }
+    .login-footer { position: relative; z-index: 1; }
+    .login-trust { color: rgba(255,255,255,0.4); font-size: 12px; }
+
+    .login-right {
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 48px 64px; background: var(--bg); overflow-y: auto;
+    }
+    .login-form-header { margin-bottom: 32px; }
+    .login-form-header h2 { font-family: var(--ff-display); font-size: 28px; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .login-form-header p { color: var(--text-muted); font-size: 14px; }
+
+    .role-tabs {
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px;
+      background: var(--bg-alt); padding: 6px; border-radius: var(--radius-lg); margin-bottom: 28px;
+    }
+    .role-tab {
+      padding: 10px 8px; text-align: center; border-radius: 4px; font-family: var(--ff-display);
+      font-weight: 600; font-size: 12px; letter-spacing: 0.03em; cursor: pointer;
+      color: var(--text-muted); transition: var(--transition); border: none; background: transparent;
+    }
+    .role-tab.active { background: var(--surface); color: var(--dark); box-shadow: var(--shadow-sm); }
+    .role-tab svg { display: block; margin: 0 auto 4px; }
+
+    .login-form { max-width: 400px; }
+    .login-actions { margin-top: 24px; }
+    .login-alt { margin-top: 24px; text-align: center; font-size: 13px; color: var(--text-muted); }
+    .login-alt a { color: var(--dark-light); font-weight: 600; }
+
+    /* ─── APP SHELL ───────────────────────────────────────────── */
+    #appShell { display: none; flex-direction: column; min-height: 100vh; }
+    
+    /* ── HEADER ── */
+    #portalHeader {
+      background: var(--surface); border-bottom: 1px solid var(--border);
+      height: 72px; display: flex; align-items: center; padding: 0 32px;
+      justify-content: space-between; position: sticky; top: 0; z-index: 100;
+      box-shadow: var(--shadow-sm);
+    }
+    .header-brand { display: flex; align-items: center; gap: 12px; }
+    .header-brand img { height: 40px; width: auto; border-radius: 4px; }
+    .header-brand .brand-text { font-family: var(--ff-display); font-weight: 800; font-size: 18px; color: var(--dark); letter-spacing: -0.02em; }
+    .header-brand .brand-sub { font-family: var(--ff-display); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); display: block; }
+
+    .header-nav { display: flex; gap: 4px; }
+    .nav-item {
+      padding: 8px 16px; border-radius: var(--radius); font-family: var(--ff-display); font-size: 13px; font-weight: 600;
+      color: var(--text-muted); cursor: pointer; transition: var(--transition); border: none; background: transparent;
+    }
+    .nav-item:hover { color: var(--dark); background: var(--gold-pale); }
+    .nav-item.active { color: var(--dark); background: var(--gold-pale); }
+
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .user-chip {
+      display: flex; align-items: center; gap: 10px; padding: 6px 14px;
+      background: var(--gold-pale); border-radius: 100px; border: 1px solid var(--border);
+    }
+    .user-avatar {
+      width: 30px; height: 30px; border-radius: 50%; background: var(--dark);
+      color: white; display: flex; align-items: center; justify-content: center;
+      font-family: var(--ff-display); font-weight: 700; font-size: 13px;
+    }
+    .user-name { font-family: var(--ff-display); font-size: 13px; font-weight: 600; color: var(--dark); }
+    .user-role-tag { font-size: 11px; color: var(--text-muted); display: block; }
+    
+    /* ── MAIN CONTENT ── */
+    #appContent { flex: 1; padding: 40px 32px; max-width: 1320px; margin: 0 auto; width: 100%; animation: fadeUp 0.4s ease; }
+    @keyframes fadeUp { from { opacity:0; transform: translateY(12px); } to { opacity:1; transform:translateY(0); } }
+
+    /* ─── SECTIONS ────────────────────────────────────────────── */
+    .section { display: none; animation: fadeUp 0.3s ease; }
+    .section.visible { display: block; }
+
+    /* ─── PAGE TOP ─── */
+    .page-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+    .page-top h1 { font-family: var(--ff-display); font-size: 28px; font-weight: 800; color: var(--dark); letter-spacing: -0.02em; }
+    .page-top p { color: var(--text-muted); font-size: 14px; margin-top: 6px; }
+    .page-top-actions { display: flex; gap: 12px; align-items: center; }
+
+    /* ─── STAT CARDS ── */
+    .stats-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 28px; }
+    .stat-card { background: var(--surface); border-radius: var(--radius-lg); padding: 20px 24px; border: 1px solid var(--border-light); box-shadow: var(--shadow-sm); }
+    .stat-card .num { font-family: var(--ff-display); font-size: 32px; font-weight: 800; color: var(--dark); line-height: 1; margin-bottom: 6px; }
+    .stat-card .label { font-size: 13px; color: var(--text-muted); font-weight: 500; }
+    .stat-card .icon { width: 40px; height: 40px; border-radius: 8px; display: flex; align-items: center; justify-content: center; margin-bottom: 16px; }
+    .stat-card .icon.blue { background: var(--gold-pale); }
+    .stat-card .icon.green { background: var(--success-pale); }
+    .stat-card .icon.orange { background: var(--warning-pale); }
+    .stat-card .icon.dark { background: rgba(0,51,89,0.08); }
+
+    /* ─── TABLE ────────────────────────────────────────────── */
+    .table-wrapper { overflow-x: auto; }
+    table { width: 100%; border-collapse: collapse; }
+    thead th { font-family: var(--ff-display); font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-muted); padding: 12px 16px; border-bottom: 2px solid var(--border); text-align: left; }
+    tbody tr { transition: var(--transition); cursor: pointer; }
+    tbody tr:hover { background: var(--gold-pale); }
+    tbody td { padding: 14px 16px; font-size: 14px; border-bottom: 1px solid var(--border-light); }
+    tbody tr:last-child td { border-bottom: none; }
+
+    /* ─── MODAL ─────────────────────────────────────────────── */
+    .modal-overlay { position: fixed; top:0; left:0; width:100%; height:100%; background: rgba(0,51,89,0.55); backdrop-filter: blur(6px); z-index: 500; display: flex; align-items: center; justify-content: center; opacity:0; visibility:hidden; transition: all 0.3s ease; }
+    .modal-overlay.open { opacity:1; visibility:visible; }
+    .modal { background: var(--surface); border-radius: var(--radius-xl); padding: 32px; max-width: 560px; width: 100%; margin: 20px; box-shadow: var(--shadow-lg); transform: translateY(24px) scale(0.97); transition: all 0.35s cubic-bezier(0.16,1,0.3,1); }
+    .modal-overlay.open .modal { transform: translateY(0) scale(1); }
+    .modal-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; }
+    .modal-title { font-family: var(--ff-display); font-size: 20px; font-weight: 800; color: var(--dark); }
+    .modal-close { width: 32px; height: 32px; display: flex; align-items: center; justify-content: center; border-radius: 50%; background: var(--bg-alt); color: var(--text-muted); font-size: 18px; cursor: pointer; transition: 0.2s; }
+    .modal-close:hover { background: var(--dark); color: white; }
+
+    /* ─── FILE UPLOAD ─── */
+    .upload-zone { border: 2px dashed var(--border); border-radius: var(--radius-lg); padding: 40px 20px; text-align: center; cursor: pointer; transition: var(--transition); }
+    .upload-zone:hover, .upload-zone.dragover { border-color: var(--gold); background: var(--gold-pale); }
+    .upload-zone input { display: none; }
+    .upload-icon { font-size: 40px; margin-bottom: 12px; }
+    .upload-zone h4 { font-family: var(--ff-display); font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .upload-zone p { font-size: 13px; color: var(--text-muted); }
+    .file-list { margin-top: 16px; display: flex; flex-direction: column; gap: 8px; }
+    .file-item { display: flex; align-items: center; gap: 12px; padding: 10px 14px; background: var(--bg-alt); border-radius: var(--radius); font-size: 13px; }
+    .file-item-name { flex: 1; font-weight: 500; color: var(--dark); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .file-item-size { color: var(--text-muted); font-size: 11px; }
+    .file-item-remove { color: var(--error); cursor: pointer; font-size: 16px; line-height: 1; }
+    .file-item-remove:hover { color: var(--error); }
+
+    /* ─── RESPONSIVE ─────────────────────────────────────────── */
+    @media (max-width: 900px) {
+      .login-layout { grid-template-columns: 1fr; }
+      .login-left { display: none; }
+      .login-right { padding: 48px 24px; }
+      .stats-row { grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 600px) {
+      #portalHeader { padding: 0 16px; }
+      #appContent { padding: 24px 16px; }
+      .stats-row { grid-template-columns: 1fr; }
+      .grid-2col { grid-template-columns: 1fr !important; }
+    }
+
+    /* Grid helpers */
+    .grid-2col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 20px; }
+    .flex-row { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+    .mt-8 { margin-top: 8px; } .mt-16 { margin-top: 16px; } .mt-24 { margin-top: 24px; }
+    .mb-16 { margin-bottom: 16px; } .mb-24 { margin-bottom: 24px; }
+    .text-muted { color: var(--text-muted); font-size: 13px; }
+    .divider { height:1px; background: var(--border-light); margin: 20px 0; }
   </style>
 </head>
 <body>
 
-  <!-- LOADING -->
-  <div id="loadingScreen">
-    <div class="spinner" style="margin-bottom: 20px;"></div>
-    <div style="font-weight: 600; color: var(--dark);">Verificando credenciales seguras...</div>
-  </div>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- LOADING SCREEN                                                  -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="loadingScreen">
+  <img src="logo2.jfif" alt="SAMEN IPS" style="height:60px; border-radius:6px; margin-bottom:28px; opacity:0.9;">
+  <div class="spinner"></div>
+  <p style="color:rgba(255,255,255,0.5); font-size:13px; margin-top:16px;">Comprobando sesión segura...</p>
+</div>
 
-  <!-- HEADER -->
-  <header class="header" id="mainHeader" style="display: none;">
-    <div style="display: flex; align-items: center; gap: 32px;">
-      <div class="brand">SAMEN<span style="color: var(--gold);">Portal</span></div>
-      <nav class="nav-links" id="adminNav" style="display: none;">
-        <a href="#" class="nav-link active">Buscar Pacientes</a>
-        <a href="#" class="nav-link">Mis Notas</a>
-      </nav>
-      <nav class="nav-links" id="patientNav" style="display: none;">
-        <a href="#" class="nav-link active">Mi Historial</a>
-      </nav>
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- LOGIN PAGE                                                       -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="loginPage">
+  <div class="login-layout">
+
+    <!-- LEFT PANEL -->
+    <div class="login-left">
+      <div class="login-brand">
+        <img src="logo2.jfif" alt="SAMEN IPS Logo">
+      </div>
+
+      <div>
+        <p style="color:var(--gold); font-family:var(--ff-display); font-size:12px; font-weight:700; letter-spacing:0.14em; text-transform:uppercase; margin-bottom:20px;">Portal Clínico Seguro</p>
+        <h1 class="login-headline">
+          Conectando<br>cuidado y<br><span>tecnología.</span>
+        </h1>
+        <p class="login-desc">El Portal Clínico centraliza el historial médico, fórmulas recetarias y resultados de exámenes en un entorno cifrado y seguro para nuestros pacientes y equipo clínico.</p>
+      </div>
+
+      <div class="login-footer">
+        <div style="display:flex; gap:24px; margin-bottom:20px;">
+          <div style="text-align:left;">
+            <div style="font-family:var(--ff-display); font-size:22px; font-weight:800; color:white;">99.9%</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.5);">Disponibilidad</div>
+          </div>
+          <div style="text-align:left;">
+            <div style="font-family:var(--ff-display); font-size:22px; font-weight:800; color:white;">256-bit</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.5);">Cifrado SSL</div>
+          </div>
+          <div style="text-align:left;">
+            <div style="font-family:var(--ff-display); font-size:22px; font-weight:800; color:white;">24/7</div>
+            <div style="font-size:12px; color:rgba(255,255,255,0.5);">Soporte</div>
+          </div>
+        </div>
+        <div class="login-trust">© 2026 SAMEN IPS. Plataforma de acceso restringido.</div>
+      </div>
     </div>
 
-    <div class="user-profile">
-      <div class="badge">
-        <div class="avatar" id="userInitial">U</div>
-        <span style="font-size: 13px; font-weight: 600; color: var(--dark);" id="userNameDisplay">Usuario</span>
+    <!-- RIGHT PANEL: FORM -->
+    <div class="login-right">
+      <div class="login-form-header">
+        <h2>Bienvenido al portal</h2>
+        <p id="loginDesc">Selecciona tu tipo de acceso e ingresa tus credenciales.</p>
       </div>
-      <button class="btn" style="background: transparent; color: #E53935; padding: 8px;" onclick="handleLogout()">Salir</button>
+
+      <!-- ROLE TABS -->
+      <div class="role-tabs">
+        <button class="role-tab active" id="tabPaciente" onclick="setRole('paciente')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 20c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+          Paciente
+        </button>
+        <button class="role-tab" id="tabMedico" onclick="setRole('medico')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 1 0 0 8 4 4 0 0 0 0-8z"/><path d="M12 14c-5.33 0-8 2.67-8 4v2h16v-2c0-1.33-2.67-4-8-4z"/><path d="M8 17v-2.5a4 4 0 0 1 8 0V17"/></svg>
+          Médico
+        </button>
+        <button class="role-tab" id="tabAdmin" onclick="setRole('admin')">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          Administrativo
+        </button>
+      </div>
+
+      <!-- ALERTS -->
+      <div id="loginError" class="alert alert--error"></div>
+      <div id="loginSuccess" class="alert alert--success"></div>
+
+      <!-- FORM -->
+      <form class="login-form" id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label" for="loginEmail">Correo electrónico</label>
+          <input class="form-input" id="loginEmail" type="email" placeholder="correo@samenips.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="loginPassword">Contraseña</label>
+          <input class="form-input" id="loginPassword" type="password" placeholder="••••••••" required autocomplete="current-password">
+        </div>
+
+        <div style="display:flex; justify-content:flex-end; margin-bottom:20px;">
+          <button type="button" class="btn--ghost" onclick="showForgotModal()">¿Olvidaste tu contraseña?</button>
+        </div>
+
+        <div class="login-actions">
+          <button type="submit" class="btn btn--dark btn--full btn--lg" id="loginBtn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M8 12l3 3 5-5"/></svg>
+            Iniciar Sesión Segura
+          </button>
+        </div>
+
+        <div class="login-alt">
+          ¿Primera vez? <a href="#" onclick="setRole('paciente'); document.getElementById('registerSection').style.display='block'; document.getElementById('loginForm').style.display='none';">Solicita tu acceso aquí</a>
+        </div>
+      </form>
+
+      <!-- REGISTER FORM (hidden by default) -->
+      <div id="registerSection" style="display:none;">
+        <form id="registerForm" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label class="form-label">Nombre completo</label>
+            <input class="form-input" id="regName" type="text" placeholder="Tu nombre completo" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Número de documento</label>
+            <input class="form-input" id="regDoc" type="text" placeholder="Cédula de ciudadanía" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Correo electrónico</label>
+            <input class="form-input" id="regEmail" type="email" placeholder="correo@ejemplo.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Contraseña (mín. 6 caracteres)</label>
+            <input class="form-input" id="regPassword" type="password" placeholder="Elige una contraseña segura" required minlength="6">
+          </div>
+          <button type="submit" class="btn btn--dark btn--full btn--lg" style="margin-top:16px;" id="registerBtn">Crear cuenta de Paciente</button>
+        </form>
+        <div class="login-alt" style="margin-top:16px;">
+          <a href="#" onclick="document.getElementById('registerSection').style.display='none'; document.getElementById('loginForm').style.display='block';">← Volver al inicio de sesión</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- APP SHELL (Shown when logged in)                               -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<div id="appShell">
+
+  <!-- HEADER -->
+  <header id="portalHeader">
+    <div class="header-brand">
+      <img src="logo2.jfif" alt="SAMEN IPS">
+      <div>
+        <span class="brand-text">SAMEN IPS</span>
+        <span class="brand-sub">Portal Clínico</span>
+      </div>
+    </div>
+
+    <nav class="header-nav" id="headerNav"></nav>
+
+    <div class="header-right">
+      <div class="user-chip">
+        <div class="user-avatar" id="headerUserInitial">U</div>
+        <div>
+          <span class="user-name" id="headerUserName">Usuario</span>
+          <span class="user-role-tag" id="headerUserRole">Rol</span>
+        </div>
+      </div>
+      <button class="btn btn--outline btn--sm" onclick="doLogout()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        Cerrar sesión
+      </button>
     </div>
   </header>
 
-  <!-- ADMIN VIEW -->
-  <main id="adminView" style="display: none;">
-    <div class="title-sec">
-      <div>
-        <h1>Panel Clínico</h1>
-        <p>Bienvenido. Aquí tienes un resumen de la actividad reciente.</p>
+  <!-- CONTENT -->
+  <div id="appContent">
+
+    <!-- ── PANEL MÉDICO ── -->
+    <div id="secMedico" class="section">
+      <div class="page-top">
+        <div>
+          <h1>Panel Clínico</h1>
+          <p>Vista general de la actividad del día. Gestiona pacientes y documentos.</p>
+        </div>
+        <div class="page-top-actions">
+          <button class="btn btn--primary" onclick="openModal('modalNuevoPaciente')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Nuevo Paciente
+          </button>
+        </div>
       </div>
-      <button class="btn btn--primary">Registrar Paciente</button>
+
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="icon blue">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--dark-light)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="num">24</div>
+          <div class="label">Pacientes activos</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon green">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+          </div>
+          <div class="num">8</div>
+          <div class="label">Consultas hoy</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon orange">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          </div>
+          <div class="num">3</div>
+          <div class="label">Pendientes de revisión</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon dark">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <div class="num">12</div>
+          <div class="label">Evoluciones esta semana</div>
+        </div>
+      </div>
+
+      <div class="grid-2col">
+        <!-- PATIENTS TABLE -->
+        <div class="card" style="grid-column: span 2;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:20px;">
+            <h3 style="font-family:var(--ff-display); font-size:17px; font-weight:700; color:var(--dark);">Pacientes Recientes</h3>
+            <div style="display:flex; gap:8px;">
+              <input type="text" class="form-input" placeholder="Buscar por nombre o documento..." style="width:280px; padding:9px 14px; font-size:13px;" oninput="searchPatients(this.value)">
+              <button class="btn btn--primary btn--sm" onclick="openModal('modalSubirDoc')">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 16 12 12 8 16"/><line x1="12" y1="12" x2="12" y2="21"/><path d="M20.39 18.39A5 5 0 0 0 18 9h-1.26A8 8 0 1 0 3 16.3"/></svg>
+                Subir Documento
+              </button>
+            </div>
+          </div>
+          <div class="table-wrapper">
+            <table id="patientsTable">
+              <thead>
+                <tr>
+                  <th>Paciente</th>
+                  <th>Documento</th>
+                  <th>Tipo</th>
+                  <th>Última consulta</th>
+                  <th>Estado</th>
+                  <th>Acciones</th>
+                </tr>
+              </thead>
+              <tbody id="patientsTbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- EVOLUTION FORM -->
+        <div class="card">
+          <h3 style="font-family:var(--ff-display); font-size:17px; font-weight:700; color:var(--dark); margin-bottom:20px;">Registrar Evolución</h3>
+          <form onsubmit="saveEvolution(event)">
+            <div class="form-group">
+              <label class="form-label">Paciente</label>
+              <select class="form-input form-select" id="evoPaciente" required>
+                <option value="">Seleccionar paciente...</option>
+                <option>Laura Camila Ortiz (102030)</option>
+                <option>Juan Carlos Restrepo (109283)</option>
+                <option>Ana María Torres (220144)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Tipo de nota</label>
+              <select class="form-input form-select" required>
+                <option>Consulta de control</option>
+                <option>Nota de evolución</option>
+                <option>Ingreso hospitalario</option>
+                <option>Egreso hospitalario</option>
+                <option>Urgencia</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Nota clínica</label>
+              <textarea class="form-input" rows="5" placeholder="Escriba la nota de evolución del paciente..." required style="resize:vertical;"></textarea>
+            </div>
+            <button type="submit" class="btn btn--dark btn--full">Guardar Evolución</button>
+          </form>
+        </div>
+
+        <!-- UPLOADER PANEL -->
+        <div class="card card--dark">
+          <h3 style="font-family:var(--ff-display); font-size:17px; font-weight:700; margin-bottom:8px;">Gestor Documental</h3>
+          <p style="font-size:13px; color:rgba(255,255,255,0.6); margin-bottom:24px;">Sube resultados de paraclínicos, fórmulas médicas o documentos de ingreso/egreso en PDF.</p>
+          <div class="upload-zone" id="uploadZoneMedico" onclick="document.getElementById('uploadInputMedico').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event,'uploadInputMedico')">
+            <div class="upload-icon">📄</div>
+            <h4 style="color:var(--dark);">Arrastra aquí o haz clic</h4>
+            <p style="color:var(--text-muted);">PDF, JPG o PNG · Máx 10MB</p>
+            <input type="file" id="uploadInputMedico" accept=".pdf,.jpg,.jpeg,.png" multiple onchange="showFiles(this,'fileListMedico')">
+          </div>
+          <div class="file-list" id="fileListMedico"></div>
+          <button class="btn btn--primary btn--full mt-16" onclick="uploadFiles('uploadInputMedico')">Subir Documentos</button>
+        </div>
+      </div>
     </div>
 
-    <div class="card" style="margin-bottom: 32px; display: flex; gap: 16px; align-items: center;">
-      <input type="text" placeholder="Buscar paciente por documento..." style="flex: 1; padding: 12px 16px; border: 1px solid var(--border); border-radius: 8px; font-family: var(--ff-body);">
-      <button class="btn btn--dark">Agregar Evolución</button>
-    </div>
+    <!-- ── PANEL ADMINISTRATIVO ── -->
+    <div id="secAdmin" class="section">
+      <div class="page-top">
+        <div>
+          <h1>Panel Administrativo</h1>
+          <p>Gestión de personal, citas y configuración del sistema clínico.</p>
+        </div>
+        <div class="page-top-actions">
+          <button class="btn btn--primary" onclick="openModal('modalNuevoUsuario')">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            Crear Usuario
+          </button>
+        </div>
+      </div>
 
-    <div class="grid-admin">
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="icon blue"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--dark-light)" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg></div>
+          <div class="num">87</div><div class="label">Pacientes registrados</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon green"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+          <div class="num">7</div><div class="label">Médicos activos</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon orange"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+          <div class="num">31</div><div class="label">Citas este mes</div>
+        </div>
+        <div class="stat-card">
+          <div class="icon dark"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg></div>
+          <div class="num">4</div><div class="label">Reportes pendientes</div>
+        </div>
+      </div>
+
+      <div class="card mb-24">
+        <h3 style="font-family:var(--ff-display); font-size:17px; font-weight:700; color:var(--dark); margin-bottom:20px;">Gestión de Usuarios del Sistema</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Usuario</th>
+                <th>Correo</th>
+                <th>Rol</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Dr. Ricardo Pardo</strong></td>
+                <td>medico@samenips.com</td>
+                <td><span class="badge badge--medico">Médico</span></td>
+                <td><span class="badge" style="background:var(--success-pale);color:var(--success);">Activo</span></td>
+                <td><button class="btn btn--sm btn--outline">Editar</button></td>
+              </tr>
+              <tr>
+                <td><strong>Admin Sistema</strong></td>
+                <td>admin@samenips.com</td>
+                <td><span class="badge badge--admin">Admin</span></td>
+                <td><span class="badge" style="background:var(--success-pale);color:var(--success);">Activo</span></td>
+                <td><button class="btn btn--sm btn--outline">Editar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       <div class="card">
-        <h3 style="font-weight: 700; margin-bottom: 20px; font-size: 18px;">Pacientes Recientes</h3>
-        <div class="patient-row">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <div class="avatar" style="background: var(--gold-pale); color: var(--dark);">L</div>
-            <div>
-              <h4 style="font-size: 15px;">Laura Camila Ortiz</h4>
-              <span style="font-size: 13px; color: var(--text-muted);">C.C. 102030</span>
-            </div>
+        <h3 style="font-family:var(--ff-display); font-size:17px; font-weight:700; color:var(--dark); margin-bottom:20px;">Próximas Citas</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Paciente</th><th>Médico</th><th>Fecha</th><th>Tipo</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>Laura C. Ortiz</td><td>Dr. Ricardo Pardo</td><td>15 Abr, 2026 — 9:00 AM</td><td>Psiquiatría</td><td><span class="badge" style="background:var(--gold-pale);color:var(--dark);">Confirmada</span></td></tr>
+              <tr><td>Juan C. Restrepo</td><td>Dr. Ricardo Pardo</td><td>15 Abr, 2026 — 11:00 AM</td><td>Control</td><td><span class="badge" style="background:var(--gold-pale);color:var(--dark);">Confirmada</span></td></tr>
+              <tr><td>Ana María Torres</td><td>Dra. Claudia Rivas</td><td>16 Abr, 2026 — 2:00 PM</td><td>Psicología</td><td><span class="badge badge--warning">Pendiente</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── PANEL PACIENTE ── -->
+    <div id="secPaciente" class="section">
+      <div class="page-top">
+        <div>
+          <h1 id="greetingName">Mi Perfil Médico</h1>
+          <p>Accede a tu historial clínico, fórmulas y resultados de exámenes.</p>
+        </div>
+        <button class="btn btn--primary" onclick="openModal('modalSolicitarCita')">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          Solicitar Cita
+        </button>
+      </div>
+
+      <div class="grid-3col mb-24">
+        <div class="card" style="text-align:center;">
+          <div style="width:56px;height:56px;border-radius:12px;background:var(--gold-pale);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--dark)" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
           </div>
-          <div style="font-size: 13px; font-weight: 600; color: var(--text-muted);">10 Oct, 2026</div>
+          <h3 style="font-family:var(--ff-display);font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px;">Historial Clínico</h3>
+          <p class="text-muted" style="margin-bottom:20px;">Consulta y descarga tus notas de evolución y consultas médicas.</p>
+          <button class="btn btn--dark btn--full" onclick="openModal('modalHistorial')">Ver Documentos</button>
         </div>
-        <div class="patient-row">
-          <div style="display: flex; align-items: center; gap: 16px;">
-            <div class="avatar" style="background: var(--gold-pale); color: var(--dark);">J</div>
-            <div>
-              <h4 style="font-size: 15px;">Juan Carlos Restrepo</h4>
-              <span style="font-size: 13px; color: var(--text-muted);">C.C. 109283</span>
-            </div>
+        <div class="card" style="text-align:center;">
+          <div style="width:56px;height:56px;border-radius:12px;background:var(--success-pale);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--success)" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
           </div>
-          <div style="font-size: 13px; font-weight: 600; color: var(--text-muted);">05 Oct, 2026</div>
+          <h3 style="font-family:var(--ff-display);font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px;">Fórmulas Médicas</h3>
+          <p class="text-muted" style="margin-bottom:20px;">Descarga tus recetas vigentes directamente desde el portal.</p>
+          <button class="btn btn--primary btn--full" onclick="openModal('modalFormulas')">Ver Recetas</button>
+        </div>
+        <div class="card" style="text-align:center;">
+          <div style="width:56px;height:56px;border-radius:12px;background:var(--warning-pale);margin:0 auto 16px;display:flex;align-items:center;justify-content:center;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="var(--warning)" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <h3 style="font-family:var(--ff-display);font-size:16px;font-weight:700;color:var(--dark);margin-bottom:8px;">Resultados de Exámenes</h3>
+          <p class="text-muted" style="margin-bottom:20px;">Revisa los resultados de tus paraclínicos y exámenes de laboratorio.</p>
+          <button class="btn btn--outline btn--full" onclick="openModal('modalExamenes')">Ver Resultados</button>
         </div>
       </div>
 
-      <div class="card" style="background: var(--dark); color: white;">
-        <h3 style="font-weight: 700; margin-bottom: 16px;">Gestor Documental</h3>
-        <p style="font-size: 14px; color: rgba(255,255,255,0.7); margin-bottom: 24px;">Selecciona un paciente para subir sus resultados de paraclínicos o fórmulas.</p>
-        <div class="upload-zone">
-          <div style="font-weight: 600; font-size: 14px; margin-bottom: 4px;">Subir PDF o Imagen</div>
-          <div style="font-size: 12px; color: rgba(255,255,255,0.5);">Max 10MB</div>
+      <div class="card">
+        <h3 style="font-family:var(--ff-display);font-size:17px;font-weight:700;color:var(--dark);margin-bottom:20px;">Mis Citas Programadas</h3>
+        <div class="table-wrapper">
+          <table>
+            <thead><tr><th>Fecha</th><th>Tipo de consulta</th><th>Médico tratante</th><th>Estado</th></tr></thead>
+            <tbody>
+              <tr><td>15 Abr, 2026 — 9:00 AM</td><td>Psiquiatría</td><td>Dr. Ricardo Pardo</td><td><span class="badge" style="background:var(--gold-pale);color:var(--dark);">Confirmada</span></td></tr>
+              <tr><td>12 Mar, 2026 — 10:30 AM</td><td>Control psicológico</td><td>Dra. Claudia Rivas</td><td><span class="badge" style="background:var(--success-pale);color:var(--success);">Realizada</span></td></tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
-  </main>
 
-  <!-- PATIENT VIEW -->
-  <main id="patientView" style="display: none;">
-    <div class="title-sec">
-      <div>
-        <h1>Mi Perfil Médico</h1>
-        <p id="patientGreeting">Hola. Aquí puedes revisar todo tu historial clínico.</p>
+  </div><!-- /appContent -->
+</div><!-- /appShell -->
+
+
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- MODALS                                                           -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+
+<!-- MODAL: NUEVO PACIENTE -->
+<div id="modalNuevoPaciente" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Registrar Nuevo Paciente</h3>
+      <span class="modal-close" onclick="closeModal('modalNuevoPaciente')">&times;</span>
+    </div>
+    <div class="grid-2col">
+      <div class="form-group"><label class="form-label">Nombres</label><input class="form-input" placeholder="Nombres del paciente" required></div>
+      <div class="form-group"><label class="form-label">Apellidos</label><input class="form-input" placeholder="Apellidos" required></div>
+      <div class="form-group"><label class="form-label">Tipo de documento</label><select class="form-input form-select"><option>Cédula de Ciudadanía</option><option>Pasaporte</option><option>Tarjeta de Identidad</option></select></div>
+      <div class="form-group"><label class="form-label">Número de documento</label><input class="form-input" type="number" placeholder="000000000" required></div>
+      <div class="form-group"><label class="form-label">Fecha de nacimiento</label><input class="form-input" type="date" required></div>
+      <div class="form-group"><label class="form-label">Teléfono</label><input class="form-input" type="tel" placeholder="310 000 0000"></div>
+      <div class="form-group" style="grid-column:span 2"><label class="form-label">Correo electrónico</label><input class="form-input" type="email" placeholder="correo@paciente.com"></div>
+      <div class="form-group" style="grid-column:span 2"><label class="form-label">Diagnóstico principal</label><textarea class="form-input" rows="3" placeholder="Diagnóstico inicial..."></textarea></div>
+    </div>
+    <div class="flex-row mt-16">
+      <button class="btn btn--dark btn--full" onclick="savePatient()">Guardar Paciente</button>
+      <button class="btn btn--outline" onclick="closeModal('modalNuevoPaciente')">Cancelar</button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: SUBIR DOCUMENTO -->
+<div id="modalSubirDoc" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Subir Documento Clínico</h3>
+      <span class="modal-close" onclick="closeModal('modalSubirDoc')">&times;</span>
+    </div>
+    <div class="form-group mb-16">
+      <label class="form-label">Paciente destino</label>
+      <select class="form-input form-select">
+        <option value="">Seleccionar paciente...</option>
+        <option>Laura Camila Ortiz (102030)</option>
+        <option>Juan Carlos Restrepo (109283)</option>
+        <option>Ana María Torres (220144)</option>
+      </select>
+    </div>
+    <div class="form-group mb-16">
+      <label class="form-label">Tipo de documento</label>
+      <select class="form-input form-select">
+        <option>Resultado de examen</option>
+        <option>Fórmula médica</option>
+        <option>Nota de evolución</option>
+        <option>Resumen de hospitalización</option>
+      </select>
+    </div>
+    <div class="upload-zone" onclick="document.getElementById('uploadInputModal').click()" ondragover="event.preventDefault();this.classList.add('dragover')" ondragleave="this.classList.remove('dragover')" ondrop="handleDrop(event,'uploadInputModal')">
+      <div class="upload-icon">📎</div>
+      <h4>Selecciona el archivo PDF</h4>
+      <p>PDF, JPG o PNG (máx. 10MB)</p>
+      <input type="file" id="uploadInputModal" accept=".pdf,.jpg,.png" onchange="showFiles(this,'fileListModal')">
+    </div>
+    <div class="file-list" id="fileListModal"></div>
+    <button class="btn btn--dark btn--full mt-16" onclick="uploadFiles('uploadInputModal')">Subir y Asociar al Paciente</button>
+  </div>
+</div>
+
+<!-- MODAL: NUEVO USUARIO (Admin) -->
+<div id="modalNuevoUsuario" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Crear Usuario del Sistema</h3>
+      <span class="modal-close" onclick="closeModal('modalNuevoUsuario')">&times;</span>
+    </div>
+    <div class="alert alert--error" id="createUserError"></div>
+    <div class="alert alert--success" id="createUserSuccess"></div>
+    <div class="form-group"><label class="form-label">Nombre completo</label><input class="form-input" id="newUserName" placeholder="Nombre del profesional" required></div>
+    <div class="form-group"><label class="form-label">Correo electrónico</label><input class="form-input" id="newUserEmail" type="email" placeholder="correo@samenips.com" required></div>
+    <div class="form-group"><label class="form-label">Contraseña inicial</label><input class="form-input" id="newUserPass" type="password" placeholder="Mínimo 6 caracteres" required minlength="6"></div>
+    <div class="form-group"><label class="form-label">Rol en el sistema</label>
+      <select class="form-input form-select" id="newUserRole">
+        <option value="medico">Médico</option>
+        <option value="admin">Administrativo</option>
+        <option value="paciente">Paciente</option>
+      </select>
+    </div>
+    <button class="btn btn--dark btn--full mt-16" id="createUserBtn" onclick="createUser()">Crear Usuario</button>
+  </div>
+</div>
+
+<!-- MODAL: HISTORIAL PACIENTE -->
+<div id="modalHistorial" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Historial Clínico</h3>
+      <span class="modal-close" onclick="closeModal('modalHistorial')">&times;</span>
+    </div>
+    <p class="text-muted mb-16">Tus documentos clínicos disponibles para descarga.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="file-item">
+        <span>📄</span>
+        <span class="file-item-name">Nota de Evolución — Mar 2026</span>
+        <button class="btn btn--sm btn--primary">Descargar</button>
+      </div>
+      <div class="file-item">
+        <span>📄</span>
+        <span class="file-item-name">Resumen de Hospitalización — Feb 2026</span>
+        <button class="btn btn--sm btn--primary">Descargar</button>
+      </div>
+      <div class="file-item">
+        <span>📄</span>
+        <span class="file-item-name">Historia Clínica Inicial — Ene 2026</span>
+        <button class="btn btn--sm btn--primary">Descargar</button>
       </div>
     </div>
+  </div>
+</div>
 
-    <div class="grid-patient">
-      <div class="card" style="text-align: center;">
-        <h3 style="font-size: 16px; margin-bottom: 8px;">Historial Clínico</h3>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Descarga todas las notas de tus citas.</p>
-        <button class="btn btn--dark" style="width: 100%;">Ver Documentos</button>
+<!-- MODAL: FÓRMULAS PACIENTE -->
+<div id="modalFormulas" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Fórmulas Médicas Vigentes</h3>
+      <span class="modal-close" onclick="closeModal('modalFormulas')">&times;</span>
+    </div>
+    <p class="text-muted mb-16">Recetas médicas activas emitidas por tu médico tratante.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="file-item">
+        <span>💊</span>
+        <span class="file-item-name">Receta — Sertralina 50mg — Abr 2026</span>
+        <span class="file-item-size" style="background:var(--success-pale);color:var(--success);padding:4px 8px;border-radius:100px;font-weight:700;">Vigente</span>
+        <button class="btn btn--sm btn--primary">Descargar</button>
       </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="font-size: 16px; margin-bottom: 8px;">Fórmulas Médicas</h3>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Accede a tus recetas vigentes.</p>
-        <button class="btn btn--primary" style="width: 100%;">Ver Recetas</button>
-      </div>
-      <div class="card" style="text-align: center;">
-        <h3 style="font-size: 16px; margin-bottom: 8px;">Exámenes</h3>
-        <p style="font-size: 13px; color: var(--text-muted); margin-bottom: 20px;">Revisa el estado de tus paraclínicos.</p>
-        <button class="btn" style="width: 100%; border: 1px solid var(--border);">Ver Resultados</button>
+      <div class="file-item">
+        <span>💊</span>
+        <span class="file-item-name">Receta — Clonazepam 0.5mg — Mar 2026</span>
+        <span class="file-item-size" style="background:var(--warning-pale);color:var(--warning);padding:4px 8px;border-radius:100px;font-weight:700;">Por vencer</span>
+        <button class="btn btn--sm btn--primary">Descargar</button>
       </div>
     </div>
-  </main>
+  </div>
+</div>
 
-  <script type="module">
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
-    import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+<!-- MODAL: EXÁMENES PACIENTE -->
+<div id="modalExamenes" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Resultados de Exámenes</h3>
+      <span class="modal-close" onclick="closeModal('modalExamenes')">&times;</span>
+    </div>
+    <p class="text-muted mb-16">Resultados de paraclínicos y exámenes de laboratorio.</p>
+    <div style="display:flex;flex-direction:column;gap:12px;">
+      <div class="file-item">
+        <span>🔬</span>
+        <span class="file-item-name">Hemograma completo — Mar 2026</span>
+        <button class="btn btn--sm btn--dark">Ver Resultado</button>
+      </div>
+      <div class="file-item">
+        <span>🔬</span>
+        <span class="file-item-name">Perfil lipídico — Feb 2026</span>
+        <button class="btn btn--sm btn--dark">Ver Resultado</button>
+      </div>
+    </div>
+  </div>
+</div>
 
-    const firebaseConfig = {
-      apiKey: "AIzaSyAh06JxdZtUSVZgqupnX4K3YZ3M8070xrY",
-      authDomain: "samen-ips-portal-2026.firebaseapp.com",
-      projectId: "samen-ips-portal-2026",
-      storageBucket: "samen-ips-portal-2026.firebasestorage.app",
-      messagingSenderId: "215082415520",
-      appId: "1:215082415520:web:c578501b5e3aaaa03760c5"
-    };
+<!-- MODAL: SOLICITAR CITA -->
+<div id="modalSolicitarCita" class="modal-overlay">
+  <div class="modal">
+    <div class="modal-header">
+      <h3 class="modal-title">Solicitar Nueva Cita</h3>
+      <span class="modal-close" onclick="closeModal('modalSolicitarCita')">&times;</span>
+    </div>
+    <div class="alert alert--success" id="citaSuccess"></div>
+    <div class="form-group"><label class="form-label">Tipo de consulta</label>
+      <select class="form-input form-select">
+        <option>Psiquiatría</option><option>Psicología</option><option>Control de medicación</option><option>Urgencias</option>
+      </select>
+    </div>
+    <div class="form-group"><label class="form-label">Fecha preferida</label><input class="form-input" type="date" min="2026-04-15"></div>
+    <div class="form-group"><label class="form-label">Franja horaria preferida</label>
+      <select class="form-input form-select"><option>Mañana (7am–12m)</option><option>Tarde (12m–6pm)</option></select>
+    </div>
+    <div class="form-group"><label class="form-label">Motivo de consulta</label><textarea class="form-input" rows="3" placeholder="Describe brevemente tu motivo..."></textarea></div>
+    <button class="btn btn--dark btn--full mt-16" onclick="saveCita()">Solicitar Cita</button>
+  </div>
+</div>
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
 
-    window.handleLogout = () => {
-      signOut(auth).then(() => {
-        window.location.href = "index.html";
-      });
-    };
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<!-- FIREBASE + APP LOGIC                                            -->
+<!-- ═══════════════════════════════════════════════════════════════ -->
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-app.js";
+  import { getAuth, onAuthStateChanged, signInWithEmailAndPassword, createUserWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-auth.js";
+  import { getFirestore, doc, setDoc, getDoc } from "https://www.gstatic.com/firebasejs/10.10.0/firebase-firestore.js";
 
-    onAuthStateChanged(auth, (user) => {
-      setTimeout(() => { // slight delay for visual smoothness
-        document.getElementById('loadingScreen').style.display = 'none';
-        
-        if (user) {
-          document.getElementById('mainHeader').style.display = 'flex';
-          const emailPrefix = user.email ? user.email.split('@')[0] : 'U';
-          document.getElementById('userInitial').innerText = emailPrefix.charAt(0).toUpperCase();
-          
-          const isAdmin = user.email.includes('admin') || user.email.includes('medico');
-          
-          if (isAdmin) {
-            document.getElementById('userNameDisplay').innerText = "Personal Clínico";
-            document.getElementById('adminNav').style.display = 'flex';
-            document.getElementById('adminView').style.display = 'block';
-          } else {
-            document.getElementById('userNameDisplay').innerText = "Paciente";
-            document.getElementById('patientGreeting').innerText = `Hola ${emailPrefix}. Aquí puedes revisar todo tu historial clínico.`;
-            document.getElementById('patientNav').style.display = 'flex';
-            document.getElementById('patientView').style.display = 'block';
-          }
+  const firebaseConfig = {
+    apiKey: "AIzaSyAh06JxdZtUSVZgqupnX4K3YZ3M8070xrY",
+    authDomain: "samen-ips-portal-2026.firebaseapp.com",
+    projectId: "samen-ips-portal-2026",
+    storageBucket: "samen-ips-portal-2026.firebasestorage.app",
+    messagingSenderId: "215082415520",
+    appId: "1:215082415520:web:c578501b5e3aaaa03760c5"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const db = getFirestore(app);
+
+  // Watch auth state
+  onAuthStateChanged(auth, async (user) => {
+    setTimeout(async () => {
+      document.getElementById('loadingScreen').style.opacity = '0';
+      setTimeout(() => document.getElementById('loadingScreen').style.display = 'none', 400);
+
+      if (user) {
+        // Get user role from Firestore
+        const uDoc = await getDoc(doc(db, 'users', user.uid));
+        let role = 'paciente';
+        let displayName = user.email;
+        if (uDoc.exists()) {
+          role = uDoc.data().role || 'paciente';
+          displayName = uDoc.data().name || user.email;
         } else {
-          // If no user is logged in, redirect to index
-          window.location.href = "index.html";
+          // Fallback: check email pattern  
+          if (user.email && user.email.includes('admin')) role = 'admin';
+          else if (user.email && user.email.includes('medico')) role = 'medico';
         }
-      }, 500);
+
+        window._currentUser = { uid: user.uid, email: user.email, role, displayName };
+        showApp(role, displayName);
+      } else {
+        showLogin();
+      }
+    }, 800);
+  });
+
+  // LOGIN
+  window.handleLogin = async (e) => {
+    e.preventDefault();
+    const email = document.getElementById('loginEmail').value;
+    const pass = document.getElementById('loginPassword').value;
+    const btn = document.getElementById('loginBtn');
+    const errEl = document.getElementById('loginError');
+    errEl.style.display = 'none';
+    btn.disabled = true;
+    btn.innerHTML = `<span class="spinner" style="width:18px;height:18px;border-width:2px;margin:0;"></span> Verificando...`;
+
+    try {
+      await signInWithEmailAndPassword(auth, email, pass);
+    } catch (err) {
+      errEl.style.display = 'block';
+      if (err.code === 'auth/invalid-credential' || err.code === 'auth/wrong-password') errEl.innerText = 'Correo o contraseña incorrectos.';
+      else if (err.code === 'auth/user-not-found') errEl.innerText = 'No existe una cuenta con ese correo.';
+      else errEl.innerText = 'Error al conectar con el servidor. Intenta de nuevo.';
+      btn.disabled = false;
+      btn.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2"/><path d="M8 12l3 3 5-5"/></svg> Iniciar Sesión Segura`;
+    }
+  };
+
+  // REGISTER
+  window.handleRegister = async (e) => {
+    e.preventDefault();
+    const name = document.getElementById('regName').value;
+    const email = document.getElementById('regEmail').value;
+    const pass = document.getElementById('regPassword').value;
+    const errEl = document.getElementById('loginError');
+    errEl.style.display = 'none';
+    try {
+      const cred = await createUserWithEmailAndPassword(auth, email, pass);
+      await setDoc(doc(db, 'users', cred.user.uid), { name, email, role: 'paciente', createdAt: new Date().toISOString() });
+    } catch (err) {
+      errEl.style.display = 'block';
+      if (err.code === 'auth/email-already-in-use') errEl.innerText = 'Este correo ya está registrado. Inicia sesión.';
+      else if (err.code === 'auth/weak-password') errEl.innerText = 'La contraseña debe tener mínimo 6 caracteres.';
+      else errEl.innerText = 'Error al crear la cuenta.';
+    }
+  };
+
+  // LOGOUT
+  window.doLogout = async () => {
+    await signOut(auth);
+    window.location.reload();
+  };
+
+  // CREATE USER (Admin)
+  window.createUser = async () => {
+    const name = document.getElementById('newUserName').value;
+    const email = document.getElementById('newUserEmail').value;
+    const pass = document.getElementById('newUserPass').value;
+    const role = document.getElementById('newUserRole').value;
+    const errEl = document.getElementById('createUserError');
+    const sucEl = document.getElementById('createUserSuccess');
+    errEl.style.display = 'none'; sucEl.style.display = 'none';
+    if(!name || !email || !pass) { errEl.innerText = 'Completa todos los campos.'; errEl.style.display='block'; return; }
+    try {
+      const cred = await createUserWithEmailAndPassword(auth, email, pass);
+      await setDoc(doc(db, 'users', cred.user.uid), { name, email, role, createdAt: new Date().toISOString() });
+      sucEl.innerText = `✓ Usuario "${name}" creado correctamente como ${role}.`;
+      sucEl.style.display = 'block';
+      document.getElementById('newUserName').value = '';
+      document.getElementById('newUserEmail').value = '';
+      document.getElementById('newUserPass').value = '';
+    } catch(err) {
+      errEl.innerText = err.code === 'auth/email-already-in-use' ? 'Ese correo ya existe en el sistema.' : 'Error al crear el usuario.';
+      errEl.style.display = 'block';
+    }
+  };
+
+  function showLogin() {
+    document.getElementById('loginPage').style.display = 'block';
+  }
+
+  function showApp(role, displayName) {
+    document.getElementById('appShell').style.display = 'flex';
+    const initial = displayName ? displayName.charAt(0).toUpperCase() : '?';
+    document.getElementById('headerUserInitial').innerText = initial;
+    document.getElementById('headerUserName').innerText = displayName;
+    const roleLabels = { medico: 'Médico Clínico', admin: 'Administrativo', paciente: 'Paciente' };
+    document.getElementById('headerUserRole').innerText = roleLabels[role] || 'Usuario';
+
+    buildNav(role);
+
+    if (role === 'medico') { activateSection('secMedico'); initPatientsTable(); }
+    else if (role === 'admin') { activateSection('secAdmin'); }
+    else { activateSection('secPaciente'); const n = document.getElementById('greetingName'); if(n) n.innerText = `Hola, ${displayName.split('@')[0]}.`; }
+  }
+
+  function buildNav(role) {
+    const nav = document.getElementById('headerNav');
+    nav.innerHTML = '';
+    const navItems = {
+      medico: [
+        { label: 'Panel Clínico', sec: 'secMedico' },
+      ],
+      admin: [
+        { label: 'Panel Administrativo', sec: 'secAdmin' },
+      ],
+      paciente: [
+        { label: 'Mi Historial', sec: 'secPaciente' },
+      ]
+    };
+    (navItems[role] || []).forEach((item, i) => {
+      const btn = document.createElement('button');
+      btn.className = 'nav-item' + (i===0?' active':'');
+      btn.innerText = item.label;
+      btn.onclick = () => {
+        document.querySelectorAll('.nav-item').forEach(n => n.classList.remove('active'));
+        btn.classList.add('active');
+        activateSection(item.sec);
+      };
+      nav.appendChild(btn);
     });
-  </script>
+  }
+
+  function activateSection(id) {
+    document.querySelectorAll('.section').forEach(s => s.classList.remove('visible'));
+    const el = document.getElementById(id);
+    if (el) { el.classList.add('visible'); void el.offsetWidth; }
+  }
+
+  window._activateSection = activateSection;
+</script>
+
+<script>
+  // ─────────────────── PATIENTS TABLE ────────────────────
+  const PATIENTS = [
+    { name: 'Laura Camila Ortiz', doc: '102030', tipo: 'Psiquiatría', lastVisit: '10 Abr, 2026', status: 'Activo' },
+    { name: 'Juan Carlos Restrepo', doc: '109283', tipo: 'Psicología', lastVisit: '05 Abr, 2026', status: 'Activo' },
+    { name: 'Ana María Torres', doc: '220144', tipo: 'Hospitalización', lastVisit: '01 Abr, 2026', status: 'En seguimiento' },
+    { name: 'Carlos Andrés Pérez', doc: '331245', tipo: 'Psiquiatría', lastVisit: '28 Mar, 2026', status: 'Alta' },
+  ];
+
+  function initPatientsTable() {
+    renderPatients(PATIENTS);
+  }
+
+  function renderPatients(list) {
+    const tbody = document.getElementById('patientsTbody');
+    if (!tbody) return;
+    tbody.innerHTML = list.map(p => `
+      <tr onclick="openModal('modalHistorial')">
+        <td><strong>${p.name}</strong></td>
+        <td>${p.doc}</td>
+        <td>${p.tipo}</td>
+        <td>${p.lastVisit}</td>
+        <td><span class="badge ${p.status === 'Activo' ? 'badge--medico' : p.status === 'Alta' ? 'badge--admin' : 'badge--warning'}">${p.status}</span></td>
+        <td>
+          <button class="btn btn--sm btn--outline" onclick="event.stopPropagation();openModal('modalSubirDoc')">Subir doc.</button>
+          <button class="btn btn--sm btn--primary" style="margin-left:6px;" onclick="event.stopPropagation();openModal('modalHistorial')">Ver historial</button>
+        </td>
+      </tr>
+    `).join('');
+  }
+
+  function searchPatients(q) {
+    const filtered = PATIENTS.filter(p =>
+      p.name.toLowerCase().includes(q.toLowerCase()) ||
+      p.doc.includes(q)
+    );
+    renderPatients(filtered);
+  }
+
+  // ─────────────────── MODAL HELPERS ─────────────────────
+  function openModal(id) {
+    document.getElementById(id).classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal(id) {
+    document.getElementById(id).classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  window.openModal = openModal;
+  window.closeModal = closeModal;
+
+  // Close on overlay click
+  document.querySelectorAll('.modal-overlay').forEach(el => {
+    el.addEventListener('click', function(e) {
+      if (e.target === this) closeModal(this.id);
+    });
+  });
+
+  // ─────────────────── ROLE TABS ─────────────────────────
+  let currentRole = 'paciente';
+  window.setRole = function(role) {
+    currentRole = role;
+    ['tabPaciente','tabMedico','tabAdmin'].forEach(id => document.getElementById(id).classList.remove('active'));
+    document.getElementById('tab' + role.charAt(0).toUpperCase() + role.slice(1)).classList.add('active');
+    const descs = { paciente: 'Ingresa tu correo y contraseña para acceder a tu historial', medico: 'Acceso exclusivo para médicos y psicólogos de SAMEN IPS', admin: 'Panel administrativo del sistema clínico SAMEN IPS' };
+    document.getElementById('loginDesc').innerText = descs[role];
+  };
+
+  // ─────────────────── EVOLUTION SAVE ────────────────────
+  window.saveEvolution = function(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('button[type=submit]');
+    btn.disabled = true;
+    btn.innerText = 'Guardando...';
+    setTimeout(() => {
+      btn.innerText = '✓ Evolución guardada';
+      btn.style.background = 'var(--success)';
+      setTimeout(() => { btn.disabled = false; btn.innerText = 'Guardar Evolución'; btn.style.background = ''; e.target.reset(); }, 2500);
+    }, 1000);
+  };
+
+  // ─────────────────── CITA SAVE ─────────────────────────
+  window.saveCita = function() {
+    const el = document.getElementById('citaSuccess');
+    el.innerText = '✓ ¡Solicitud enviada! Te contactaremos para confirmar tu cita.';
+    el.style.display = 'block';
+    setTimeout(() => { el.style.display = 'none'; closeModal('modalSolicitarCita'); }, 3000);
+  };
+
+  // ─────────────────── PATIENT SAVE ──────────────────────
+  window.savePatient = function() {
+    closeModal('modalNuevoPaciente');
+    alert('Paciente registrado exitosamente.');
+  };
+
+  // ─────────────────── FILE UPLOAD UI ────────────────────
+  window.showFiles = function(input, listId) {
+    const list = document.getElementById(listId);
+    list.innerHTML = '';
+    Array.from(input.files).forEach(f => {
+      const item = document.createElement('div');
+      item.className = 'file-item';
+      item.innerHTML = `<span>📎</span><span class="file-item-name">${f.name}</span><span class="file-item-size">${(f.size/1024/1024).toFixed(2)} MB</span>`;
+      list.appendChild(item);
+    });
+  };
+
+  window.handleDrop = function(e, inputId) {
+    e.preventDefault();
+    const input = document.getElementById(inputId);
+    input.files = e.dataTransfer.files;
+    window.showFiles(input, inputId.replace('uploadInput', 'fileList'));
+    e.currentTarget.classList.remove('dragover');
+  };
+
+  window.uploadFiles = function(inputId) {
+    const input = document.getElementById(inputId);
+    if (!input.files.length) { alert('Por favor selecciona al menos un archivo.'); return; }
+    const btn = event.target;
+    btn.disabled = true; btn.innerText = 'Subiendo...';
+    setTimeout(() => {
+      btn.disabled = false; btn.innerText = '✓ Subido exitosamente';
+      btn.style.background = 'var(--success)';
+      setTimeout(() => { btn.style.background = ''; btn.innerText = 'Subir Documentos'; input.value = ''; document.getElementById(inputId.replace('uploadInput','fileList')).innerHTML = ''; }, 2500);
+    }, 1500);
+  };
+</script>
+
 </body>
 </html>
