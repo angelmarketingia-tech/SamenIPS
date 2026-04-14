@@ -2819,9 +2819,9 @@ window.handleAuthSubmit = async function(e) {
     }
     successMsg.style.display = 'block';
     
-    // Redirect to the Next.js secure dashboard immediately
+    // Redirect to the vanilla portal page to maintain domain session!
     setTimeout(() => {
-      window.location.href = "https://samen-ips-portal-2026.web.app/dashboard";
+      window.location.href = "portal.html";
     }, 1500);
 
   } catch (error) {
