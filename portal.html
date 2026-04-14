@@ -923,24 +923,30 @@
   const auth = getAuth(app);
   const db = getFirestore(app);
 
-  // Watch auth state
-  onAuthStateChanged(auth, async (user) => {
+  // Watch auth state — wrapped fully in try/catch so Firestore errors never block the UI
+  onAuthStateChanged(auth, (user) => {
     setTimeout(async () => {
-      document.getElementById('loadingScreen').style.opacity = '0';
-      setTimeout(() => document.getElementById('loadingScreen').style.display = 'none', 400);
+      const ls = document.getElementById('loadingScreen');
+      ls.style.opacity = '0';
+      setTimeout(() => { ls.style.display = 'none'; }, 400);
 
       if (user) {
-        // Get user role from Firestore
-        const uDoc = await getDoc(doc(db, 'users', user.uid));
         let role = 'paciente';
-        let displayName = user.email;
-        if (uDoc.exists()) {
-          role = uDoc.data().role || 'paciente';
-          displayName = uDoc.data().name || user.email;
-        } else {
-          // Fallback: check email pattern  
+        let displayName = user.email || 'Usuario';
+
+        try {
+          const uDoc = await getDoc(doc(db, 'users', user.uid));
+          if (uDoc.exists()) {
+            role = uDoc.data().role || 'paciente';
+            displayName = uDoc.data().name || user.email;
+          } else {
+            if (user.email && user.email.includes('admin')) role = 'admin';
+            else if (user.email && user.email.includes('medico')) role = 'medico';
+          }
+        } catch (_) {
           if (user.email && user.email.includes('admin')) role = 'admin';
           else if (user.email && user.email.includes('medico')) role = 'medico';
+          else role = 'paciente';
         }
 
         window._currentUser = { uid: user.uid, email: user.email, role, displayName };
@@ -948,7 +954,7 @@
       } else {
         showLogin();
       }
-    }, 800);
+    }, 600);
   });
 
   // LOGIN
